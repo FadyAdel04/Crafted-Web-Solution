@@ -14,13 +14,14 @@ export default function Hero() {
     <section className="hero">
       <div className="w-full lg:w-1/2 xl:pl-12 sm:pr-2 mt-8">
         <h1 className="text-5xl sm:text-6xl text-theme-blue font-bold leading-tight mb-5">
-          Growing Your Business <br />
-          Is Our Calling
+          Web Solutions Tailored <br />
+          For Your Vision
         </h1>
 
         <p className="font-light text-xl text-gray-400 leading-relaxed mb-16">
-          We provide developers & designers using latest technologies to help
-          you scale up your business.
+          We craft stunning websites for all needs: Landing Pages, Portfolios,
+          Invitations, Business Sites, Digital Menus, E-commerce, Event Pages,
+          Courses, Blogs, CVs, and more.
         </p>
         <Fade direction="up" delay={500} triggerOnce>
           <Button
@@ -46,7 +47,7 @@ export default function Hero() {
           </Button>
         </Fade>
       </div>
-      <div className="flex pt-5 md:w-fit w-full justify-center items-center order-first md:order-first lg:order-last lg:w-1/2">
+      <div className="flex pt-5 md:w-fit w-full justify-center items-center order-first md:order-first lg:order-last lg:w-1/3">
         <Fade direction="up" triggerOnce>
           <img className="" src={BuildWebsite} alt="Build Website" />
         </Fade>

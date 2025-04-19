@@ -32,9 +32,9 @@ module.exports = {
     },
     extend: {
       colors: {
-        'light-theme-purple': '#E3D3FD',
-        'theme-purple': '#6610f2',
-        'dark-theme-purple': '#520dc2',
+        'light-theme-purple': '#131325',
+        'theme-purple': '#BE73ED',
+        'dark-theme-purple': '#131325',
         'theme-blue': '#152C5B',
       },
       margin: {

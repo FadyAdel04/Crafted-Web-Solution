@@ -27,7 +27,7 @@ export const DiscussForm = (actions) => {
 
     const templateParams = {
       from_name: `${name} - ${company} ( ${phone} - ${email} )`,
-      to_name: 'Racxstudio',
+      to_name: 'Crafted Web Solution',
       message: projectIdea,
     };
 
@@ -39,10 +39,10 @@ export const DiscussForm = (actions) => {
       && projectIdea !== ''
     ) {
       emailjs.send(
-        'service_h4gtndg',
-        'template_a9tvs7a',
+        'service_fhcsn39',
+        'template_vffswgn',
         templateParams,
-        'user_csqIxzN5mKsl1yw4ffJzV',
+        'gCwauWGXN-5MmfzhP',
       )
         .then(() => {
           toast.success('Success! we\'\ll get back to you soon. Thank you!');

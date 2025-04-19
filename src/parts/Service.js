@@ -16,7 +16,7 @@ export default function Service({ data }) {
         </Fade>
         <Fade direction="left" triggerOnce>
           <p className="font-light text-lg text-gray-400 text-center mb-12">
-            We are ready to scale up your business with our great service.
+            We turn your ideas into real digital products — smart, modern, and ready to shine.
           </p>
         </Fade>
 
@@ -27,7 +27,7 @@ export default function Service({ data }) {
               <Fade direction={item.animation} delay={500 * index} key={index} triggerOnce>
                 <div>
                   <div className="bg-white group rounded-2xl shadow-2xl border border-light-theme-purple transform transition duration-500 hover:scale-105">
-                    <img src={item.imageUrl} alt="Service" className="w-full rounded-t-2xl" />
+                    <img src={item.imageUrl} alt="Service" className="rounded-t-2xl p-5" />
                     <h2 className="text-theme-blue text-center text-xl py-7 rounded-b-2xl">{item.title}</h2>
                   </div>
                 </div>
