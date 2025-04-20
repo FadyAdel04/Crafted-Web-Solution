@@ -68,8 +68,8 @@ We offer cost-effective web solutions aimed at **local clients** and small busin
 
 ## 📣 Get in Touch
 
-📧 **Email:** craftedwebs.solution@gmail.com  
-📍 **Facebook Page:** [Crafted Webs Solution](https://www.facebook.com/profile.php?id=61560386722294)
+📧 **Email:** craftedwebsolution@gmail.com 
+📍 **Facebook Page:** [Crafted Webs Solution](https://www.facebook.com/profile.php?id=61575214027590)
 
 ---
 
