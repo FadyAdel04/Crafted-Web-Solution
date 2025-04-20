@@ -14,6 +14,7 @@ import { ProjectDetailPage } from 'pages/ProjectDetailPage';
 import { DiscussProjectPage } from 'pages/DiscussProjectPage';
 
 import './assets/css/styles.css';
+import WhatsAppButton from './parts/WhatsAppButton';
 
 function App() {
   return (
@@ -25,7 +26,8 @@ function App() {
         <Route exact path="/team" element={<TeamPage />} />
         <Route exact path="/discuss-project" element={<DiscussProjectPage />} />
         <Route path="**" element={<NotFoundPage />} />
-      </Routes>
+        </Routes>
+        <WhatsAppButton />
     </>
   );
 }

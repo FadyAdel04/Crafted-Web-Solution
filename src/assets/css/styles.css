@@ -58,7 +58,7 @@ section {
   /* Size of the arrow */
   color: #000;
   /* Color of the arrow */
-  content: '';
+  content: "";
   /* Override default content */
   border: solid #000;
   /* Arrow color */
@@ -94,6 +94,32 @@ h5,
 h6 {
   font-size: inherit;
   font-weight: bold !important;
+}
+
+.whatsapp-button {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 999;
+  background-color: #25d366;
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
+}
+
+.whatsapp-button:hover {
+  transform: scale(1.1);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+.whatsapp-icon {
+  width: 35px;
+  height: 35px;
 }
 
 .discuss {
