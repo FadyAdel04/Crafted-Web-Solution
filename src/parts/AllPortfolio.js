@@ -57,7 +57,7 @@ export default function AllPortfolio({ data }) {
           </TabList>
 
           <TabPanel>
-            <div className="grid grid-cols-2 sm:grid-cols-3 sm:gap-2 xl:gap-8 justify-items-center">
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 sm:gap-2 xl:gap-8 justify-items-center">
               {LandingPage.map((item, index) => (
                 <PortfolioItem key={item.id} item={item} index={index} />
               ))}
@@ -65,7 +65,7 @@ export default function AllPortfolio({ data }) {
           </TabPanel>
 
           <TabPanel>
-            <div className="grid grid-cols-2 sm:grid-cols-3 sm:gap-2 xl:gap-8 justify-items-center">
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 sm:gap-2 xl:gap-8 justify-items-center">
               {Invitation.map((item, index) => (
                 <PortfolioItem key={item.id} item={item} index={index} />
               ))}
@@ -73,7 +73,7 @@ export default function AllPortfolio({ data }) {
           </TabPanel>
 
           <TabPanel>
-            <div className="grid grid-cols-2 sm:grid-cols-3 sm:gap-2 xl:gap-8 justify-items-center">
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 sm:gap-2 xl:gap-8 justify-items-center">
               {Portfolio.map((item, index) => (
                 <PortfolioItem key={item.id} item={item} index={index} />
               ))}
@@ -81,7 +81,7 @@ export default function AllPortfolio({ data }) {
           </TabPanel>
 
           <TabPanel>
-            <div className="grid grid-cols-2 sm:grid-cols-3 sm:gap-2 xl:gap-8 justify-items-center">
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 sm:gap-2 xl:gap-8 justify-items-center">
               {BusinessWebsite.map((item, index) => (
                 <PortfolioItem key={item.id} item={item} index={index} />
               ))}
@@ -89,7 +89,7 @@ export default function AllPortfolio({ data }) {
           </TabPanel>
 
           <TabPanel>
-            <div className="grid grid-cols-2 sm:grid-cols-3 sm:gap-2 xl:gap-8 justify-items-center">
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 sm:gap-2 xl:gap-8 justify-items-center">
               {DigitalMenu.map((item, index) => (
                 <PortfolioItem key={item.id} item={item} index={index} />
               ))}
@@ -97,7 +97,7 @@ export default function AllPortfolio({ data }) {
           </TabPanel>
 
           <TabPanel>
-            <div className="grid grid-cols-2 sm:grid-cols-3 sm:gap-2 xl:gap-8 justify-items-center">
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 sm:gap-2 xl:gap-8 justify-items-center">
               {ELearning.map((item, index) => (
                 <PortfolioItem key={item.id} item={item} index={index} />
               ))}
@@ -105,7 +105,7 @@ export default function AllPortfolio({ data }) {
           </TabPanel>
           
           <TabPanel>
-            <div className="grid grid-cols-2 sm:grid-cols-3 sm:gap-2 xl:gap-8 justify-items-center">
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 sm:gap-2 xl:gap-8 justify-items-center">
               {Ecommerce.map((item, index) => (
                 <PortfolioItem key={item.id} item={item} index={index} />
               ))}
@@ -113,7 +113,7 @@ export default function AllPortfolio({ data }) {
           </TabPanel>
 
           <TabPanel>
-            <div className="grid grid-cols-2 sm:grid-cols-3 sm:gap-2 xl:gap-8 justify-items-center">
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 sm:gap-2 xl:gap-8 justify-items-center">
               {data.map((item, index) => (
                 <PortfolioItem key={item.id} item={item} index={index} />
               ))}
