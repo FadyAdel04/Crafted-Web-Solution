@@ -11,7 +11,7 @@ export default function Service({ data }) {
   return (
     <div className="bg-gray-50">
       <div className="container mx-auto pt-20 pb-28">
-        <Fade direction="right" triggerOnce>
+        <Fade direction="up" triggerOnce>
           <h1 className="text-5xl text-theme-blue text-center font-bold">Our Service</h1>
         </Fade>
         <Fade direction="left" triggerOnce>

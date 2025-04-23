@@ -57,7 +57,7 @@ export const Services = [
   {
     title: "Creative Digital Services",
     imageUrl: creative,
-    animation: "right",
+    animation: "left",
   },
 ];
 

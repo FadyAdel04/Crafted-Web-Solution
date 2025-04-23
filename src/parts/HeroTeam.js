@@ -24,7 +24,7 @@ export default function HeroTeam() {
         </Fade>
       </div>
       <div className="flex pt-5 w-full justify-center items-center order-first md:w-full lg:order-last lg:w-1/2">
-        <Fade direction="top-right" triggerOnce delay={300}>
+        <Fade direction="top-left" triggerOnce delay={300}>
           <img src={Team} alt="Hero" />
         </Fade>
       </div>
