@@ -41,7 +41,9 @@ import Management from "../assets/images/Advantages/Management.png";
 import Favorite from "../assets/images/Advantages/Favorite.png";
 
 // TeamMembers
-import CEO from "../assets/images/TeamMembers/CEO.jpg";
+import Fady from "../assets/images/TeamMembers/Fady.jpg";
+import Ahmed from "../assets/images/TeamMembers/Ahmed.jpg";
+import joo from "../assets/images/TeamMembers/joo.jpg";
 
 export const Services = [
   {
@@ -341,7 +343,17 @@ export const Advantages = [
 export const TeamMembers = [
   {
     name: "Fady Adel",
-    position: "Full Stack Developer",
-    imageUrl: CEO,
+    position: "Owner-Full Stack Developer",
+    imageUrl: Fady,
+  },
+  {
+    name: "Ahmed Adel",
+    position: "Ui/Ux Devloper",
+    imageUrl: Ahmed,
+  },
+  {
+    name: "Youssef Mohamed",
+    position: "Social Media Manger",
+    imageUrl: joo,
   },
 ];
