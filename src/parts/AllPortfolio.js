@@ -8,7 +8,9 @@ import React from "react";
 import { Fade } from "react-awesome-reveal";
 
 // eslint-disable-next-line import/no-extraneous-dependencies
-import { Tab, Tabs, TabList, TabPanel } from "react-tabs";
+import {
+  Tab, Tabs, TabList, TabPanel, 
+} from "react-tabs";
 
 import Button from "elements/Button";
 
@@ -17,7 +19,7 @@ export default function AllPortfolio({ data }) {
   const Invitation = data.filter((item) => item.type === "Invitation");
   const Portfolio = data.filter((item) => item.type === "Portfolio");
   const BusinessWebsite = data.filter(
-    (item) => item.type === "Business Website"
+    (item) => item.type === "Business Website",
   );
   const DigitalMenu = data.filter((item) => item.type === "Digital Menu");
   const ELearning = data.filter((item) => item.type === "E-Learning");

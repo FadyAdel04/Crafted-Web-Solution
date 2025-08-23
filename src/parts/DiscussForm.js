@@ -21,7 +21,9 @@ import Button from "elements/Button";
 export const DiscussForm = (actions) => {
   const { data, resetForm } = actions;
   const submitEmail = () => {
-    const { name, company, email, phone, projectIdea } = data;
+    const {
+      name, company, email, phone, projectIdea, 
+    } = data;
 
     const templateParams = {
       from_name: `${name} - ${company} ( ${phone} - ${email} )`,
@@ -30,18 +32,18 @@ export const DiscussForm = (actions) => {
     };
 
     if (
-      name !== "" &&
-      company !== "" &&
-      email !== "" &&
-      phone !== "" &&
-      projectIdea !== ""
+      name !== ""
+      && company !== ""
+      && email !== ""
+      && phone !== ""
+      && projectIdea !== ""
     ) {
       emailjs
         .send(
           "service_fhcsn39",
           "template_vffswgn",
           templateParams,
-          "gCwauWGXN-5MmfzhP"
+          "gCwauWGXN-5MmfzhP",
         )
         .then(
           () => {
@@ -50,7 +52,7 @@ export const DiscussForm = (actions) => {
           },
           (error) => {
             toast.error(error);
-          }
+          },
         );
     } else {
       toast.error("Please fill out the blank form.");
