@@ -11,27 +11,27 @@ import BuildWebsite from "../assets/images/hero/BuildWebsite.png";
 
 export default function Hero() {
   return (
-    <section className="hero">
-      <div className="w-full lg:w-1/2 xl:pl-12 sm:pr-2 mt-8">
+    <section className="hero" dir="rtl">
+      <div className="w-full lg:w-1/2 xl:pr-12 sm:pl-2 mt-8 text-right">
         <h1 className="text-5xl sm:text-6xl text-theme-blue font-bold leading-tight mb-5">
-          Web Solutions Tailored <br />
-          For Your Vision
+          حلول ويب مصممة <br />
+          خصيصًا لرؤيتك
         </h1>
 
         <p className="font-light text-xl text-gray-400 leading-relaxed mb-16">
-          We craft stunning websites for all needs: Landing Pages, Portfolios,
-          Invitations, Business Sites, Digital Menus, E-commerce, Event Pages,
-          Courses, Blogs, CVs, and more.
+          نقوم بإنشاء مواقع ويب مذهلة لتلبية جميع الاحتياجات: صفحات هبوط،
+          بورتفوليو، دعوات، مواقع أعمال، قوائم طعام رقمية، متاجر إلكترونية،
+          صفحات فعاليات، منصات دورات، مدونات، سير ذاتية، والمزيد.
         </p>
         <Fade direction="up" delay={500} triggerOnce>
           <Button
             href="/project"
             type="link"
-            className="flex w-71 h-18 items-center px-14 py-5 text-white text-xl bg-theme-purple rounded-lg shadow-2xl hover:bg-dark-theme-purple transition duration-200"
+            className="flex w-71 h-18 items-center justify-center px-14 py-5 text-white text-xl bg-theme-purple rounded-lg shadow-2xl hover:bg-dark-theme-purple transition duration-200"
           >
-            See Our Work
+            شاهد أعمالنا
             <svg
-              className="ml-2 w-7 h-7 text-white animate-bounce-x"
+              className="mr-2 w-7 h-7 text-white animate-bounce-x"
               xmlns="http://www.w3.org/2000/svg"
               fill="none"
               viewBox="0 0 24 24"
@@ -41,7 +41,7 @@ export default function Hero() {
                 strokeLinecap="round"
                 strokeLinejoin="round"
                 strokeWidth={2}
-                d="M9 5l7 7-7 7"
+                d="M15 19l-7-7 7-7"
               />
             </svg>
           </Button>
@@ -49,7 +49,7 @@ export default function Hero() {
       </div>
       <div className="flex pt-5 md:w-fit w-full justify-center items-center order-first md:order-first lg:order-last lg:w-1/3">
         <Fade direction="up" triggerOnce>
-          <img className="" src={BuildWebsite} alt="Build Website" />
+          <img className="" src={BuildWebsite} alt="إنشاء موقع ويب" />
         </Fade>
       </div>
     </section>

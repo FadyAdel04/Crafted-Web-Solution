@@ -1,11 +1,11 @@
 /* eslint-disable import/extensions */
 
-// Services Img Imports
+// استيراد صور الخدمات
 import web from "../assets/images/Services/Web.png";
 import digital from "../assets/images/Services/Mobile.png";
 import creative from "../assets/images/Services/creative.png";
 
-// Portfolio Img Imports
+// استيراد صور الأعمال (Portfolio)
 import wedding from "../assets/images/Portfolio/wedding.png";
 import wedding2 from "../assets/images/Portfolio/wedding2.png";
 import ecommerce from "../assets/images/Portfolio/ecommerce.png";
@@ -34,30 +34,30 @@ import courses from "../assets/images/Portfolio/courses.png";
 import courses2 from "../assets/images/Portfolio/courses2.png";
 import courses3 from "../assets/images/Portfolio/courses3.png";
 
-// Advantages
+// استيراد صور المميزات
 import Communicative from "../assets/images/Advantages/Communicative.png";
 import Collaborative from "../assets/images/Advantages/Collaborative.png";
 import Management from "../assets/images/Advantages/Management.png";
 import Favorite from "../assets/images/Advantages/Favorite.png";
 
-// TeamMembers
+// استيراد صور أعضاء الفريق
 import Fady from "../assets/images/TeamMembers/Fady.jpg";
 import Ahmed from "../assets/images/TeamMembers/Ahmed.jpg";
 import joo from "../assets/images/TeamMembers/joo.jpg";
 
 export const Services = [
   {
-    title: "Web Design & Development",
+    title: "تصميم وتطوير المواقع",
     imageUrl: web,
     animation: "left",
   },
   {
-    title: "Digital Solutions for Events & Personal Branding",
+    title: "حلول رقمية للفعاليات والعلامة التجارية الشخصية",
     imageUrl: digital,
     animation: "up",
   },
   {
-    title: "Creative Digital Services",
+    title: "خدمات رقمية إبداعية",
     imageUrl: creative,
     animation: "left",
   },
@@ -66,29 +66,29 @@ export const Services = [
 export const Portfolios = [
   {
     id: "wedding1",
-    title: "Wedding Invitation",
+    title: "دعوة زفاف",
     imageUrl: wedding,
     type: "Invitation",
-    description: "Personalized digital wedding invitation with photo gallery, event details, and RSVP management",
-    responsibility: ["Custom Design", "RSVP System", "Mobile Optimization"],
+    description: "دعوة زفاف رقمية مخصصة مع معرض صور، تفاصيل الحدث، وإدارة RSVP",
+    responsibility: ["تصميم مخصص", "نظام RSVP", "تحسين للجوال"],
     credit: "https://wedding-mariam-abdelrahman.vercel.app/",
   },
   {
     id: "ecommerce1",
-    title: "Phlox Premium Headphones",
+    title: "سماعات Phlox Premium",
     imageUrl: ecommerce,
     type: "E-commerce",
-    description: "High-end audio equipment store with product customization and secure checkout",
-    responsibility: ["Store Design", "Cart System", "Payment Gateway"],
+    description: "متجر معدات صوتية فاخرة مع تخصيص المنتجات ووسائل دفع آمنة",
+    responsibility: ["تصميم المتجر", "نظام سلة المشتريات", "بوابة الدفع"],
     credit: "https://fadyadel04.github.io/Phlox/",
   },
   {
     id: "portfolio1",
-    title: "Fady Adel - Developer Portfolio",
+    title: "Portfolio فادي عادل - مطور",
     imageUrl: portofolio,
     type: "Portfolio",
-    description: "Interactive developer portfolio showcasing projects, skills, and blog articles",
-    responsibility: ["UI/UX Design", "Content Management", "Performance Optimization"],
+    description: "بورتفوليو تفاعلي يعرض المشاريع والمهارات والمقالات",
+    responsibility: ["تصميم واجهة المستخدم", "إدارة المحتوى", "تحسين الأداء"],
     credit: "https://fadyadel-fady-adels-projects.vercel.app/",
   },
   {
@@ -96,98 +96,98 @@ export const Portfolios = [
     title: "Papa John's Egypt",
     imageUrl: Business,
     type: "Business Website",
-    description: "Official regional website with online ordering, store locator, and promotions",
-    responsibility: ["Responsive Design", "Order Tracking", "CMS Integration"],
+    description: "الموقع الإقليمي الرسمي مع طلبات أونلاين، محدد مواقع الفروع، والعروض",
+    responsibility: ["تصميم متجاوب", "تتبع الطلبات", "تكامل CMS"],
     credit: "https://fadyadel04.github.io/Papa-John-s/",
   },
   {
     id: "digitalMenu1",
-    title: "Dajaj - Digital Menu System",
+    title: "Dajaj - نظام القائمة الرقمية",
     imageUrl: menu,
     type: "Digital Menu",
-    description: "Restaurant ordering system with menu management and table service integration",
-    responsibility: ["Menu Design", "Order API", "Admin Dashboard"],
+    description: "نظام طلبات مطعم مع إدارة القائمة وتكامل خدمة الطاولات",
+    responsibility: ["تصميم القائمة", "API للطلبات", "لوحة تحكم للإدارة"],
     credit: "https://linktr.ee/Daja340",
   },
   {
     id: "Elearning1",
-    title: "Eclipseful Learning Platform",
+    title: "منصة Eclipseful للتعلم",
     imageUrl: courses,
     type: "E-Learning",
-    description: "Comprehensive course platform with video lessons, quizzes, and certification",
-    responsibility: ["LMS Development", "Payment Processing", "Student Dashboard"],
+    description: "منصة شاملة للدورات مع دروس فيديو، اختبارات، وشهادات",
+    responsibility: ["تطوير LMS", "معالجة الدفع", "لوحة تحكم للطلاب"],
     credit: "https://courses-next-seven.vercel.app/",
   },
   {
     id: "wedding2",
-    title: "Wedding Invitation 2",
+    title: "دعوة زفاف 2",
     imageUrl: wedding2,
     type: "Invitation",
-    description: "Elegant wedding website with countdown timer, location maps, and guestbook",
-    responsibility: ["Custom Animation", "Map Integration", "Database Management"],
+    description: "موقع زفاف أنيق مع عداد تنازلي، خرائط مواقع، ودفتر ضيوف",
+    responsibility: ["رسوم متحركة مخصصة", "تكامل الخرائط", "إدارة قاعدة البيانات"],
     credit: "https://mohamed-wedad.vercel.app/",
   },
   {
     id: "landing2",
-    title: "Solar System Explorer",
+    title: "مستكشف النظام الشمسي",
     imageUrl: landing2,
     type: "Landing Page",
-    description: "Interactive educational experience about planetary systems with 3D visualization",
-    responsibility: ["3D Rendering", "Educational Content", "Performance Optimization"],
+    description: "تجربة تعليمية تفاعلية عن الكواكب مع تصور ثلاثي الأبعاد",
+    responsibility: ["تصيير ثلاثي الأبعاد", "محتوى تعليمي", "تحسين الأداء"],
     credit: "https://solar-company-one.vercel.app/",
   },
   {
     id: "landing3",
-    title: "BrainWave AI Platform",
+    title: "منصة BrainWave للذكاء الاصطناعي",
     imageUrl: landing3,
     type: "Landing Page",
-    description: "Showcase for AI-powered analytics tools with demo integration",
-    responsibility: ["AI Demo", "Lead Capture", "Technical Documentation"],
+    description: "منصة تعرض أدوات تحليل مدعومة بالذكاء الاصطناعي مع تكامل للعروض التوضيحية",
+    responsibility: ["تكامل الذكاء الاصطناعي", "التقاط العملاء المحتملين", "توثيق تقني"],
     credit: "https://brain-wave-ai.vercel.app/",
   },
   {
     id: "landing4",
-    title: "Space Exploration Initiative",
+    title: "مبادرة استكشاف الفضاء",
     imageUrl: landing4,
     type: "Landing Page",
-    description: "Promotional site for space research organization with event registration",
-    responsibility: ["Event System", "Donation Processing", "News Integration"],
+    description: "موقع ترويجي لمؤسسة أبحاث الفضاء مع نظام تسجيل للفعاليات",
+    responsibility: ["نظام الفعاليات", "معالجة التبرعات", "تكامل الأخبار"],
     credit: "https://space-website-react-vert.vercel.app/",
   },
   {
     id: "landing5",
-    title: "Viva Decor Interiors",
+    title: "Viva Decor للتصميم الداخلي",
     imageUrl: landing5,
     type: "Landing Page",
-    description: "Portfolio showcase for interior design studio with project galleries",
-    responsibility: ["Gallery System", "Client Testimonials", "Contact Management"],
+    description: "عرض أعمال لمكتب تصميم داخلي مع معارض للمشاريع",
+    responsibility: ["نظام معرض", "آراء العملاء", "إدارة التواصل"],
     credit: "https://fadyadel04.github.io/VivaDecor/",
   },
   {
     id: "landing6",
-    title: "Cinematic Universe",
+    title: "الكون السينمائي",
     imageUrl: landing6,
     type: "Landing Page",
-    description: "Movie database and ticket booking platform with showtime management",
-    responsibility: ["Movie API", "Booking System", "Theater Integration"],
+    description: "منصة أفلام مع قاعدة بيانات وحجز تذاكر وجدولة عروض",
+    responsibility: ["تكامل API للأفلام", "نظام الحجز", "تكامل دور العرض"],
     credit: "https://movies-app-six-tau.vercel.app/",
   },
   {
     id: "portfolio2",
-    title: "Creative Agency Portfolio",
+    title: "بورتفوليو وكالة إبداعية",
     imageUrl: portofolio2,
     type: "Portfolio",
-    description: "Showcase for design agency with case studies and client work",
-    responsibility: ["Case Studies", "Client Portal", "Lead Generation"],
+    description: "عرض لأعمال وكالة تصميم مع دراسات حالة وأعمال العملاء",
+    responsibility: ["دراسات حالة", "بوابة العملاء", "توليد العملاء المحتملين"],
     credit: "https://fadyadel04.github.io/special-design/",
   },
   {
     id: "portfolio3",
-    title: "Tech Solutions Portfolio",
+    title: "Portfolio حلول تقنية",
     imageUrl: portofolio3,
     type: "Portfolio",
-    description: "Corporate portfolio for IT services company with service packages",
-    responsibility: ["Service Pages", "Solution Showcase", "Contact System"],
+    description: "Portfolio شركة خدمات تكنولوجيا المعلومات مع باقات خدمات",
+    responsibility: ["صفحات خدمات", "عرض الحلول", "نظام التواصل"],
     credit: "https://fadyadel04.github.io/FADY-DEVELOPMENT-template/",
   },
   {
@@ -195,8 +195,8 @@ export const Portfolios = [
     title: "Care Pulse Medical",
     imageUrl: Business2,
     type: "Business Website",
-    description: "Healthcare provider website with doctor profiles and appointment scheduling",
-    responsibility: ["Appointment System", "Doctor Profiles", "Medical Blog"],
+    description: "موقع لمزود خدمات صحية مع بروفايلات الأطباء وحجز المواعيد",
+    responsibility: ["نظام المواعيد", "ملفات الأطباء", "مدونة طبية"],
     credit: "https://care-pules-health-care.vercel.app/",
   },
   {
@@ -204,8 +204,8 @@ export const Portfolios = [
     title: "Elite Car Rentals",
     imageUrl: Business3,
     type: "Business Website",
-    description: "Vehicle rental platform with availability checker and online booking",
-    responsibility: ["Inventory System", "Booking Engine", "Fleet Management"],
+    description: "منصة لتأجير السيارات مع نظام تحقق من التوافر وحجز أونلاين",
+    responsibility: ["نظام الجرد", "محرك الحجز", "إدارة الأسطول"],
     credit: "https://car-rent-app-chi.vercel.app/",
   },
   {
@@ -213,71 +213,71 @@ export const Portfolios = [
     title: "Peak Fitness Gym",
     imageUrl: Business4,
     type: "Business Website",
-    description: "Gym membership site with class schedules and trainer profiles",
-    responsibility: ["Schedule System", "Member Portal", "Payment Processing"],
+    description: "موقع نادي رياضي مع جدول حصص وبروفايلات المدربين",
+    responsibility: ["نظام الجداول", "بوابة الأعضاء", "معالجة الدفع"],
     credit: "https://fitness-gym-sandy.vercel.app/",
   },
   {
     id: "business5",
-    title: "Holla Movie Platform",
+    title: "منصة Holla للأفلام",
     imageUrl: Business5,
     type: "Business Website",
-    description: "Streaming service with content recommendations and user profiles",
-    responsibility: ["Video Player", "Recommendation Engine", "User Accounts"],
+    description: "خدمة بث أفلام مع توصيات محتوى وحسابات مستخدمين",
+    responsibility: ["مشغل فيديو", "محرك توصيات", "إدارة الحسابات"],
     credit: "https://holla-movies.vercel.app/",
   },
   {
     id: "business6",
-    title: "Zen Mountain Resort",
+    title: "منتجع Zen Mountain",
     imageUrl: Business6,
     type: "Business Website",
-    description: "Luxury resort booking site with room selection and package deals",
-    responsibility: ["Booking System", "Gallery", "Package Builder"],
+    description: "موقع منتجع فاخر مع حجز غرف وباقات خاصة",
+    responsibility: ["نظام الحجز", "معرض صور", "منشئ الباقات"],
     credit: "https://fadyadel04.github.io/TBH-ZEN-Resort/index.html",
   },
   {
     id: "Elearning2",
-    title: "Nouvil Coding Academy",
+    title: "أكاديمية Nouvil للبرمجة",
     imageUrl: courses2,
     type: "E-Learning",
-    description: "Programming courses with code editor integration and progress tracking",
-    responsibility: ["Code Sandbox", "Progress System", "Certificate Generation"],
+    description: "دورات برمجة مع محرر أكواد مدمج ونظام تتبع التقدم",
+    responsibility: ["تكامل محرر أكواد", "نظام التقدم", "توليد الشهادات"],
     credit: "https://fadyadel04.github.io/Nouvil-Academy/",
   },
   {
     id: "Elearning3",
-    title: "Almeshmosamed Academy",
+    title: "أكاديمية المصمم المشمس",
     imageUrl: courses3,
     type: "E-Learning",
-    description: "Language learning platform with speech recognition and tutoring",
-    responsibility: ["Speech API", "Lesson Planner", "Tutor Matching"],
+    description: "منصة لتعلم اللغات مع التعرف على الصوت والدروس المباشرة",
+    responsibility: ["تكامل التعرف الصوتي", "مخطط دروس", "ربط مع مدرسين"],
     credit: "https://al-mesh-mosamem.vercel.app/",
   },
   {
     id: "digitalMenu2",
-    title: "Gourmet Restaurant",
+    title: "مطعم فاخر - القائمة الرقمية",
     imageUrl: menu2,
     type: "Digital Menu",
-    description: "Upscale restaurant menu with wine pairing recommendations",
-    responsibility: ["Menu Management", "Pairing Algorithm", "Reservation System"],
+    description: "قائمة مطعم راقٍ مع توصيات لأطباق مناسبة للمشروبات",
+    responsibility: ["إدارة القائمة", "خوارزمية التوصية", "نظام الحجز"],
     credit: "https://gourmet-restaurant-menu.vercel.app/",
   },
   {
     id: "ecommerce2",
-    title: "Amazon Marketplace Clone",
+    title: "استنساخ سوق أمازون",
     imageUrl: ecommerce2,
     type: "E-commerce",
-    description: "Full-featured e-commerce platform with seller accounts and reviews",
-    responsibility: ["Seller Portal", "Review System", "Recommendation Engine"],
+    description: "منصة تجارة إلكترونية كاملة مع حسابات بائعين ونظام تقييمات",
+    responsibility: ["بوابة البائعين", "نظام المراجعات", "محرك التوصيات"],
     credit: "https://intern-ecommerce-front-end2.vercel.app/",
   },
   {
     id: "ecommerce3",
-    title: "Nike Style Store",
+    title: "متجر Nike Style",
     imageUrl: ecommerce3,
     type: "E-commerce",
-    description: "Athletic wear store with product customization and size advisor",
-    responsibility: ["Product Customizer", "Size Recommendation", "Inventory Sync"],
+    description: "متجر ملابس رياضية مع تخصيص المنتجات ومستشار مقاسات",
+    responsibility: ["مخصص المنتجات", "توصية بالمقاسات", "مزامنة المخزون"],
     credit: "https://karma-master-ecommerce.vercel.app/",
   },
   {
@@ -285,26 +285,26 @@ export const Portfolios = [
     title: "Luxe Shopping Bag",
     imageUrl: ecommerce4,
     type: "E-commerce",
-    description: "Fashion boutique with virtual try-on and style recommendations",
-    responsibility: ["AR Try-On", "Style Quiz", "Wishlist Management"],
+    description: "بوتيك أزياء مع تجربة افتراضية للتجربة وتوصيات أنماط",
+    responsibility: ["تجربة الواقع المعزز", "اختبار الأنماط", "إدارة قائمة الأمنيات"],
     credit: "https://tech-trove-shop.vercel.app/",
   },
   {
     id: "ecommerce5",
-    title: "Blue Fashion Store",
+    title: "متجر Blue Fashion",
     imageUrl: ecommerce5,
     type: "E-commerce",
-    description: "Sustainable clothing store with eco-impact calculator",
-    responsibility: ["Impact Calculator", "Subscription Service", "Lookbook"],
+    description: "متجر ملابس مستدامة مع حاسبة للأثر البيئي",
+    responsibility: ["حاسبة الأثر", "خدمة الاشتراك", "كتالوج الأزياء"],
     credit: "https://fadyadel04.github.io/E-commers/",
   },
   {
     id: "ecommerce6",
-    title: "Imaginfiy AI Services",
+    title: "خدمات Imaginify AI",
     imageUrl: ecommerce6,
     type: "E-commerce",
-    description: "Marketplace for AI-generated art with printing options",
-    responsibility: ["AI Generator", "Print Integration", "Artist Commissions"],
+    description: "سوق للفنون المولدة بالذكاء الاصطناعي مع خيارات الطباعة",
+    responsibility: ["مولد ذكاء اصطناعي", "تكامل الطباعة", "عمولات الفنانين"],
     credit: "https://imaginify-eight-pi.vercel.app/",
   },
 ];
@@ -312,29 +312,29 @@ export const Portfolios = [
 export const Advantages = [
   [
     {
-      title: "Clear Communication",
+      title: "تواصل واضح",
       description:
-        "We keep you updated every step of the way to ensure your vision comes to life perfectly.",
+        "نُبقيك على اطلاع في كل خطوة لضمان تنفيذ رؤيتك بشكل مثالي.",
       imageUrl: Communicative,
     },
     {
-      title: "Well-Managed Projects",
+      title: "مشاريع مُدارة جيدًا",
       description:
-        "From planning to launch, every project is handled with care and precision for smooth delivery.",
+        "من التخطيط إلى الإطلاق، يتم التعامل مع كل مشروع بعناية ودقة لضمان تسليم سلس.",
       imageUrl: Management,
     },
   ],
   [
     {
-      title: "Custom & Creative",
+      title: "مخصصة وإبداعية",
       description:
-        "Every website or digital invitation is designed uniquely to match your style and purpose.",
+        "كل موقع أو دعوة رقمية يتم تصميمها بشكل فريد لتناسب أسلوبك وهدفك.",
       imageUrl: Collaborative,
     },
     {
-      title: "Client-Favorite Designs",
+      title: "تصاميم مفضلة لدى العملاء",
       description:
-        "We’ve crafted dozens of stunning projects that clients love and proudly share.",
+        "لقد أنجزنا عشرات المشاريع المذهلة التي أحبها العملاء ويشاركونها بفخر.",
       imageUrl: Favorite,
     },
   ],
@@ -342,18 +342,18 @@ export const Advantages = [
 
 export const TeamMembers = [
   {
-    name: "Fady Adel",
-    position: "Owner-Full Stack Developer",
+    name: "فادي عادل",
+    position: "المالك - مطور Full Stack",
     imageUrl: Fady,
   },
   {
-    name: "Ahmed Adel",
-    position: "Ui/Ux Devloper",
+    name: "أحمد عادل",
+    position: "مطور واجهة مستخدم وتجربة مستخدم",
     imageUrl: Ahmed,
   },
   {
-    name: "Youssef Mohamed",
-    position: "Social Media Manger",
+    name: "يوسف محمد",
+    position: "مدير وسائل التواصل الاجتماعي",
     imageUrl: joo,
   },
 ];

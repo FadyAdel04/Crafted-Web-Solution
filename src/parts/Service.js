@@ -3,37 +3,47 @@
 /* eslint-disable react/jsx-filename-extension */
 /* eslint-disable import/extensions */
 
-import React from 'react';
+import React from "react";
 
-import { Fade } from 'react-awesome-reveal';
+import { Fade } from "react-awesome-reveal";
 
 export default function Service({ data }) {
   return (
-    <div className="bg-gray-50">
+    <div className="bg-gray-50" dir="rtl">
       <div className="container mx-auto pt-20 pb-28">
         <Fade direction="up" triggerOnce>
-          <h1 className="text-5xl text-theme-blue text-center font-bold">Our Service</h1>
+          <h1 className="text-5xl text-theme-blue text-center font-bold">
+            خدماتنا
+          </h1>
         </Fade>
         <Fade direction="left" triggerOnce>
           <p className="font-light text-lg text-gray-400 text-center mb-12">
-            We turn your ideas into real digital products — smart, modern, and ready to shine.
+            نحن نحول أفكارك إلى منتجات رقمية حقيقية — ذكية، عصرية، وجاهزة للتألق.
           </p>
         </Fade>
 
         <div className="grid grid-rows-3 px-10 gap-8 sm:grid-cols-3 sm:grid-rows-1 sm:gap-6 xl:gap-16">
-          {
-            data.map((item, index) => (
-              // eslint-disable-next-line react/no-array-index-key
-              <Fade direction={item.animation} delay={500 * index} key={index} triggerOnce>
-                <div>
-                  <div className="bg-white group rounded-2xl shadow-2xl border border-light-theme-purple transform transition duration-500 hover:scale-105">
-                    <img src={item.imageUrl} alt="Service" className="rounded-t-2xl p-5" />
-                    <h2 className="text-theme-blue text-center text-xl py-7 rounded-b-2xl">{item.title}</h2>
-                  </div>
+          {data.map((item) => (
+            <Fade
+              direction={item.animation}
+              delay={500}
+              key={item.id || item.title} // 👈 استخدم id أو العنوان كـ key
+              triggerOnce
+            >
+              <div>
+                <div className="bg-white group rounded-2xl shadow-2xl border border-light-theme-purple transform transition duration-500 hover:scale-105">
+                  <img
+                    src={item.imageUrl}
+                    alt="خدمة"
+                    className="rounded-t-2xl p-5"
+                  />
+                  <h2 className="text-theme-blue text-center text-xl py-7 rounded-b-2xl">
+                    {item.title}
+                  </h2>
                 </div>
-              </Fade>
-            ))
-          }
+              </div>
+            </Fade>
+          ))}
         </div>
       </div>
     </div>

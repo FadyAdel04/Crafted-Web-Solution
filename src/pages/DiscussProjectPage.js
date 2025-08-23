@@ -18,6 +18,9 @@ export const DiscussProjectPage = () => {
 
   useEffect(() => {
     window.scroll(0, 0);
+    // ضبط الاتجاه للـ RTL عند الدخول للصفحة
+    document.documentElement.setAttribute("dir", "rtl");
+    document.documentElement.setAttribute("lang", "ar");
   }, []);
 
   const onChange = (event) => {
@@ -40,7 +43,22 @@ export const DiscussProjectPage = () => {
   return (
     <>
       <Header />
-      <DiscussForm data={data} onChange={onChange} resetForm={resetForm} />
+      <div className="text-right font-[Tajawal]">
+        <DiscussForm 
+          data={data} 
+          onChange={onChange} 
+          resetForm={resetForm} 
+          labels={{
+            name: "الاسم الكامل",
+            company: "الشركة",
+            email: "البريد الإلكتروني",
+            phone: "رقم الهاتف",
+            projectIdea: "فكرة المشروع",
+            submit: "إرسال",
+            reset: "إعادة تعيين",
+          }}
+        />
+      </div>
       <Footer />
     </>
   );

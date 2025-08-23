@@ -2,14 +2,14 @@
 /* eslint-disable react/prop-types */
 /* eslint-disable react/destructuring-assignment */
 /* eslint-disable react/jsx-filename-extension */
-import React, { useEffect } from 'react';
+import React, { useEffect } from "react";
 
-import Header from 'parts/Header';
-import { useParams } from 'react-router-dom';
-import PortfolioDetail from 'parts/PortfolioDetail';
-import Footer from 'parts/Footer';
+import Header from "parts/Header";
+import { useParams } from "react-router-dom";
+import PortfolioDetail from "parts/PortfolioDetail";
+import Footer from "parts/Footer";
 
-import { Portfolios } from 'json/landingPageData';
+import { Portfolios } from "json/landingPageData";
 
 export const ProjectDetailPage = () => {
   const { id } = useParams();
@@ -20,7 +20,9 @@ export const ProjectDetailPage = () => {
   return (
     <>
       <Header />
-      <PortfolioDetail data={detailData.length === 1 ? [detailData[0]] : null} />
+      <PortfolioDetail
+        data={detailData.length === 1 ? [detailData[0]] : null}
+      />
       <Footer />
     </>
   );

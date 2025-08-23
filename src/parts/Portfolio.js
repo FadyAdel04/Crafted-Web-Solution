@@ -9,19 +9,22 @@ import { Fade } from "react-awesome-reveal";
 import Button from "../elements/Button";
 
 export default function Portfolio({ data }) {
-  // Get only the first 6 items
+  // عرض أول 6 مشاريع فقط
   const displayedItems = data.slice(0, 6);
 
   return (
-    <section className="container mx-auto flex flex-col items-center mt-20">
+    <section
+      className="container mx-auto flex flex-col items-center mt-20"
+      dir="rtl"
+    >
       <Fade direction="up" triggerOnce>
         <h1 className="text-5xl text-theme-blue text-center font-bold">
-          Our Selected Project
+          بعض مشاريعنا
         </h1>
       </Fade>
       <Fade direction="left" triggerOnce>
         <p className="font-light text-lg text-gray-400 text-center mb-12">
-          We are ready to scale up your business with our great work result.
+          نحن مستعدون للارتقاء بعملك من خلال نتائجنا المميزة.
         </p>
       </Fade>
 
@@ -39,7 +42,7 @@ export default function Portfolio({ data }) {
                 <div className="relative">
                   <img
                     src={item.imageUrl}
-                    alt="Portfolio"
+                    alt="مشروع"
                     className="rounded-t-2xl z-0 w-full h-48 object-cover"
                   />
                   <div className="absolute flex w-full h-full top-0 opacity-0 bg-black justify-center rounded-t-2xl rounded-b img-hover">
@@ -88,7 +91,9 @@ export default function Portfolio({ data }) {
             type="link"
             className="flex flex-grow-0 w-36 h-12 sm:w-40 sm:h-14 lg:w-44 lg:h-16 xl:w-36 xl:h-12 text-theme-purple px-5 border border-theme-purple items-center mt-14 rounded-full justify-center transition duration-300 hover:bg-theme-purple hover:text-white"
           >
-            <p className="font-normal py-3 lg:text-lg xl:text-base">See More</p>
+            <p className="font-normal py-3 lg:text-lg xl:text-base">
+              عرض المزيد
+            </p>
             <svg
               className="w-4 h-4"
               xmlns="http://www.w3.org/2000/svg"
