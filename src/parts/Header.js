@@ -68,17 +68,6 @@ export default function Header() {
         <li className="py-2 lg:py-0">
           <Button
             className={`${
-              path === "/team" ? "active-link" : ""
-            } font-medium text-lg px-5 no-underline hover:underline`}
-            type="link"
-            href="/team"
-          >
-            الفريق
-          </Button>
-        </li>
-        <li className="py-2 lg:py-0">
-          <Button
-            className={`${
               path === "/project" ? "active-link" : ""
             } font-medium text-lg px-5 no-underline hover:underline`}
             type="link"
