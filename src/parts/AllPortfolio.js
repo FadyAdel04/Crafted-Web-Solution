@@ -3,191 +3,177 @@
 /* eslint-disable react/button-has-type */
 /* eslint-disable react/jsx-filename-extension */
 /* eslint-disable react/prop-types */
-import React from "react";
-
+import React, { useState } from "react";
 import { Fade } from "react-awesome-reveal";
-
-// eslint-disable-next-line import/no-extraneous-dependencies
-import {
-  Tab, Tabs, TabList, TabPanel, 
-} from "react-tabs";
-
 import Button from "elements/Button";
 
 export default function AllPortfolio({ data }) {
-  const LandingPage = data.filter((item) => item.type === "Landing Page");
-  const Invitation = data.filter((item) => item.type === "Invitation");
-  const Portfolio = data.filter((item) => item.type === "Portfolio");
-  const BusinessWebsite = data.filter(
-    (item) => item.type === "Business Website",
-  );
-  const DigitalMenu = data.filter((item) => item.type === "Digital Menu");
-  const ELearning = data.filter((item) => item.type === "E-Learning");
-  const Ecommerce = data.filter((item) => item.type === "E-commerce");
+  const categories = [
+    { key: "All", label: "الكل" },
+    { key: "Landing Page", label: "صفحات هبوط" },
+    { key: "Invitation", label: "دعوات رقمية" },
+    { key: "Portfolio", label: "بورتفوليو وسير ذاتية" },
+    { key: "Business Website", label: "مواقع أعمال وشركات" },
+    { key: "Digital Menu", label: "قوائم طعام ذكية" },
+    { key: "E-Learning", label: "منصات تعليمية" },
+    { key: "E-commerce", label: "متاجر إلكترونية" },
+  ];
+
+  const [activeTab, setActiveTab] = useState("All");
+
+  const filteredItems = activeTab === "All"
+    ? data
+    : data.filter((item) => item.type === activeTab);
 
   return (
-    <Fade bottom>
-      <section className="container mx-auto">
-        <Tabs className="flex flex-col px-4">
-          <TabList>
-            <div className="flex flex-row mb-5 overflow-x-auto pb-2">
-              <Tab>
-                <button className="font-normal px-5 py-2 mr-3 text-theme-purple text-lg border border-theme-purple rounded-full transition duration-300 hover:bg-theme-purple hover:text-white focus:outline-none focus:bg-theme-purple focus:text-white whitespace-nowrap">
-                  Landing Page
-                </button>
-              </Tab>
-              <Tab>
-                <button className="font-normal px-5 py-2 mr-3 text-theme-purple text-lg border border-theme-purple rounded-full transition duration-300 hover:bg-theme-purple hover:text-white focus:outline-none focus:bg-theme-purple focus:text-white whitespace-nowrap">
-                  Invitation
-                </button>
-              </Tab>
-              <Tab>
-                <button className="font-normal px-5 py-2 mr-3 text-theme-purple text-lg border border-theme-purple rounded-full transition duration-300 hover:bg-theme-purple hover:text-white focus:outline-none focus:bg-theme-purple focus:text-white whitespace-nowrap">
-                  Portfolio
-                </button>
-              </Tab>
-              <Tab>
-                <button className="font-normal px-5 py-2 mr-3 text-theme-purple text-lg border border-theme-purple rounded-full transition duration-300 hover:bg-theme-purple hover:text-white focus:outline-none focus:bg-theme-purple focus:text-white whitespace-nowrap">
-                  Business Website
-                </button>
-              </Tab>
-              <Tab>
-                <button className="font-normal px-5 py-2 mr-3 text-theme-purple text-lg border border-theme-purple rounded-full transition duration-300 hover:bg-theme-purple hover:text-white focus:outline-none focus:bg-theme-purple focus:text-white whitespace-nowrap">
-                  Digital Menu
-                </button>
-              </Tab>
-              <Tab>
-                <button className="font-normal px-5 py-2 mr-3 text-theme-purple text-lg border border-theme-purple rounded-full transition duration-300 hover:bg-theme-purple hover:text-white focus:outline-none focus:bg-theme-purple focus:text-white whitespace-nowrap">
-                  E-Learning
-                </button>
-              </Tab>
-              <Tab>
-                <button className="font-normal px-5 py-2 text-theme-purple text-lg border border-theme-purple rounded-full transition duration-300 hover:bg-theme-purple hover:text-white focus:outline-none focus:bg-theme-purple focus:text-white whitespace-nowrap">
-                  Ecommerce
-                </button>
-              </Tab>
-              <Tab>
-                <button className="font-normal px-5 py-2 text-theme-purple text-lg border border-theme-purple rounded-full transition duration-300 hover:bg-theme-purple hover:text-white focus:outline-none focus:bg-theme-purple focus:text-white whitespace-nowrap">
-                  All
-                </button>
-              </Tab>
-            </div>
-          </TabList>
+    <section className="relative py-12 pb-24" dir="rtl">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+        
+        {/* Category Filter Pills Bar */}
+        <div className="flex items-center justify-start lg:justify-center gap-2 overflow-x-auto pb-6 mb-12 scrollbar-none" dir="rtl">
+          {categories.map((cat) => {
+            const isActive = activeTab === cat.key;
+            return (
+              <button
+                key={cat.key}
+                onClick={() => setActiveTab(cat.key)}
+                className={`px-5 py-2.5 rounded-full text-xs sm:text-sm font-semibold whitespace-nowrap transition-all duration-300 ${
+                  isActive
+                    ? "bg-gradient-to-r from-blue-600 to-purple-600 text-white shadow-[0_0_20px_rgba(139,92,246,0.4)] border border-purple-400/40"
+                    : "bg-[#111322] text-slate-300 hover:text-white hover:bg-[#16192E] border border-white/[0.08]"
+                }`}
+              >
+                {cat.label}
+              </button>
+            );
+          })}
+        </div>
 
-          <TabPanel>
-            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 sm:gap-2 xl:gap-8 justify-items-center">
-              {LandingPage.map((item, index) => (
-                <PortfolioItem key={item.id} item={item} index={index} />
-              ))}
-            </div>
-          </TabPanel>
+        {/* Results Counter */}
+        <div className="flex items-center justify-between mb-8 text-xs sm:text-sm text-slate-400 border-b border-white/[0.06] pb-4">
+          <span>يتم عرض {filteredItems.length} مشروع</span>
+          <span className="font-mono text-purple-400">{activeTab}</span>
+        </div>
 
-          <TabPanel>
-            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 sm:gap-2 xl:gap-8 justify-items-center">
-              {Invitation.map((item, index) => (
-                <PortfolioItem key={item.id} item={item} index={index} />
-              ))}
-            </div>
-          </TabPanel>
+        {/* Projects Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {filteredItems.map((item, index) => (
+            <PortfolioItem key={item.id} item={item} index={index} />
+          ))}
+        </div>
 
-          <TabPanel>
-            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 sm:gap-2 xl:gap-8 justify-items-center">
-              {Portfolio.map((item, index) => (
-                <PortfolioItem key={item.id} item={item} index={index} />
-              ))}
-            </div>
-          </TabPanel>
+        {filteredItems.length === 0 && (
+          <div className="py-20 text-center">
+            <p className="text-slate-400 text-base">لا توجد مشاريع مضافة حالياً في هذا القسم.</p>
+          </div>
+        )}
 
-          <TabPanel>
-            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 sm:gap-2 xl:gap-8 justify-items-center">
-              {BusinessWebsite.map((item, index) => (
-                <PortfolioItem key={item.id} item={item} index={index} />
-              ))}
-            </div>
-          </TabPanel>
-
-          <TabPanel>
-            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 sm:gap-2 xl:gap-8 justify-items-center">
-              {DigitalMenu.map((item, index) => (
-                <PortfolioItem key={item.id} item={item} index={index} />
-              ))}
-            </div>
-          </TabPanel>
-
-          <TabPanel>
-            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 sm:gap-2 xl:gap-8 justify-items-center">
-              {ELearning.map((item, index) => (
-                <PortfolioItem key={item.id} item={item} index={index} />
-              ))}
-            </div>
-          </TabPanel>
-
-          <TabPanel>
-            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 sm:gap-2 xl:gap-8 justify-items-center">
-              {Ecommerce.map((item, index) => (
-                <PortfolioItem key={item.id} item={item} index={index} />
-              ))}
-            </div>
-          </TabPanel>
-
-          <TabPanel>
-            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 sm:gap-2 xl:gap-8 justify-items-center">
-              {data.map((item, index) => (
-                <PortfolioItem key={item.id} item={item} index={index} />
-              ))}
-            </div>
-          </TabPanel>
-        </Tabs>
-      </section>
-    </Fade>
+      </div>
+    </section>
   );
 }
 
-// Extracted PortfolioItem component for better readability and reusability
 function PortfolioItem({ item, index }) {
+  const getTechStack = (type) => {
+    switch (type) {
+      case "E-commerce":
+        return ["Next.js", "Tailwind CSS", "Stripe API"];
+      case "Invitation":
+        return ["React", "Tailwind CSS", "Supabase"];
+      case "Landing Page":
+        return ["React", "Tailwind CSS", "Vite"];
+      case "Business Website":
+        return ["Next.js", "Tailwind CSS", "SEO"];
+      case "Digital Menu":
+        return ["React", "Tailwind CSS", "QR System"];
+      case "E-Learning":
+        return ["Next.js", "Video LMS", "Tailwind CSS"];
+      case "Portfolio":
+      default:
+        return ["React", "Tailwind CSS", "UI/UX"];
+    }
+  };
+
+  const techStack = getTechStack(item.type);
+
   return (
-    <Fade triggerOnce direction="up" delay={500 * index}>
-      <Button type="link" href={`/project/${item.id}`}>
-        <div className="group rounded-2xl shadow-xl w-auto m-3 transform transition duration-500 hover:scale-110 portofolio-card">
-          <div className="relative">
+    <Fade triggerOnce direction="up" delay={Math.min(100 * (index % 6), 500)}>
+      <div className="group h-full flex flex-col justify-between rounded-2xl bg-[#111322] border border-white/[0.08] hover:border-purple-500/40 overflow-hidden transition-all duration-300 hover:-translate-y-1.5 hover:shadow-[0_20px_40px_-15px_rgba(139,92,246,0.25)]">
+        
+        <div>
+          {/* Thumbnail Container */}
+          <div className="relative h-56 w-full overflow-hidden bg-[#16192E]">
             <img
               src={item.imageUrl}
-              alt="Portfolio"
-              className="rounded-t-2xl z-0 w-full h-48 object-cover"
+              alt={item.title}
+              className="w-full h-full object-cover object-top transition-transform duration-700 group-hover:scale-105"
             />
-            <div className="absolute flex w-full h-full top-0 opacity-0 bg-black justify-center rounded-t-2xl rounded-b img-hover">
-              <button className="focus:outline-none">
-                <svg
-                  className="w-20 h-20 text-gray-200"
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"
-                  />
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"
-                  />
-                </svg>
-              </button>
+            
+            {/* Subtle Gradient Overlay */}
+            <div className="absolute inset-0 bg-gradient-to-t from-[#111322] via-transparent to-transparent opacity-80" />
+
+            {/* Category Badge */}
+            <div className="absolute top-3 right-3">
+              <span className="px-3 py-1 rounded-full text-xs font-medium bg-[#0A0B14]/80 backdrop-blur-md text-slate-200 border border-white/10">
+                {item.type}
+              </span>
             </div>
           </div>
-          <div className="py-4">
-            <h2 className="text-theme-blue text-center text-xl">
+
+          {/* Body Content */}
+          <div className="p-6">
+            <h3 className="text-xl font-bold text-white mb-2 group-hover:text-purple-300 transition-colors">
               {item.title}
-            </h2>
-            <p className="font-light text-gray-400 text-center">{item.type}</p>
+            </h3>
+
+            <p className="text-sm text-slate-400 leading-relaxed line-clamp-2 mb-4 font-normal">
+              {item.description}
+            </p>
+
+            {/* Tech Stack Tags */}
+            <div className="flex flex-wrap gap-1.5 mb-2" dir="ltr">
+              {techStack.map((tech, tIdx) => (
+                <span
+                  key={tIdx}
+                  className="px-2.5 py-0.5 rounded-md text-[11px] font-medium bg-blue-950/40 text-blue-300 border border-blue-500/20"
+                >
+                  {tech}
+                </span>
+              ))}
+            </div>
           </div>
         </div>
-      </Button>
+
+        {/* Action Buttons */}
+        <div className="p-6 pt-0 mt-auto flex items-center justify-between gap-3 border-t border-white/[0.06]">
+          {item.credit && (
+            <Button
+              href={item.credit}
+              type="link"
+              target="_blank"
+              isExternal
+              className="flex-1 inline-flex items-center justify-center gap-1.5 py-2.5 px-3 rounded-xl text-xs font-semibold text-white bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-500 hover:to-purple-500 transition-all no-underline shadow-sm"
+            >
+              <span>معاينة حية</span>
+              <svg className="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+              </svg>
+            </Button>
+          )}
+
+          <Button
+            href={`/project/${item.id}`}
+            type="link"
+            className="flex-1 inline-flex items-center justify-center gap-1.5 py-2.5 px-3 rounded-xl text-xs font-medium text-slate-300 bg-white/[0.05] hover:bg-white/[0.1] hover:text-white border border-white/[0.08] transition-all no-underline"
+          >
+            <span>التفاصيل</span>
+            <svg className="w-3.5 h-3.5 transform rotate-180" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
+            </svg>
+          </Button>
+        </div>
+
+      </div>
     </Fade>
   );
 }

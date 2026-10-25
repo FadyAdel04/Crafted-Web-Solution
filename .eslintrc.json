@@ -40,6 +40,12 @@
     "react/jsx-props-no-multi-spaces": "off",
     "react/jsx-closing-tag-location": "off",
     "quotes": "off",
-    "react/jsx-one-expression-per-line": "off"
+    "react/jsx-one-expression-per-line": "off",
+    "max-len": "off",
+    "comma-dangle": "off",
+    "react/no-array-index-key": "off",
+    "object-curly-newline": "off",
+    "operator-linebreak": "off",
+    "no-unused-vars": "warn"
   }
 }

@@ -1,22 +1,7 @@
-/* eslint-disable linebreak-style */
-/* eslint-disable react/jsx-filename-extension */
-/* eslint-disable import/extensions */
-
+/* eslint-disable */
 import React from 'react';
+import BrandLogo from './BrandLogo';
 
-import Button from '../elements/Button';
-
-export default function BrandIcon() {
-  return (
-    <Button
-      className=""
-      type="link"
-      href="/"
-    >
-      <p className="text-theme-blue text-4xl font-medium ">
-        Crafted Web
-        <span className="text-theme-purple">Solutions</span>
-      </p>
-    </Button>
-  );
+export default function BrandIcon(props) {
+  return <BrandLogo {...props} />;
 }

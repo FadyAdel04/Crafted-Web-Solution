@@ -1,50 +1,53 @@
-/* eslint-disable import/no-extraneous-dependencies */
-/* eslint-disable global-require */
-/* eslint-disable import/extensions */
 /** @type {import('tailwindcss').Config} */
-
-import { fontFamily as _fontFamily } from 'tailwindcss/defaultTheme';
-
-// const defaultTheme = require('tailwindcss/defaultTheme');
+const defaultTheme = require('tailwindcss/defaultTheme');
 
 module.exports = {
-  purge: ['./src/**/*.{js,jsx,ts,tsx}', './public/index.html'],
-  darkMode: false, // or 'media' or 'class'
+  content: ['./src/**/*.{js,jsx,ts,tsx}', './public/index.html'],
+  darkMode: 'class',
   theme: {
-    fontFamily: {
-      sans: ['Poppins', ..._fontFamily.sans],
-    },
-    fontSize: {
-      xs: '.75rem',
-      sm: '.875rem',
-      tiny: '.875rem',
-      base: '1rem',
-      lg: '1.125rem',
-      xl: '1.25rem',
-      '2xl': '1.5rem',
-      '3xl': '1.875rem',
-      '4xl': '2.25rem',
-      '4-5xl': '2.625rem',
-      '5xl': '3rem',
-      '5-5xl': '3.875rem',
-      '6xl': '4rem',
-      '7xl': '5rem',
-    },
     extend: {
-      colors: {
-        'light-theme-purple': '#131325',
-        'theme-purple': '#BE73ED',
-        'dark-theme-purple': '#131325',
-        'theme-blue': '#152C5B',
+      fontFamily: {
+        sans: ['"Plus Jakarta Sans"', 'Tajawal', 'Inter', ...defaultTheme.fontFamily.sans],
+        heading: ['"Plus Jakarta Sans"', 'Tajawal', ...defaultTheme.fontFamily.sans],
+        body: ['Inter', 'Tajawal', ...defaultTheme.fontFamily.sans],
       },
-      margin: {
-        '-112': '-28rem',
-        '-120': '-30rem',
-        '-128': '-32rem',
-        '-144': '-36rem',
+      colors: {
+        // Deep Midnight Navy & Surfaces
+        'brand-dark': '#0A0B14',
+        'brand-surface': '#111322',
+        'brand-surface-elevated': '#16192E',
+        
+        // Brand Accents
+        'brand-blue': '#2563EB',
+        'brand-blue-dark': '#1D4ED8',
+        'brand-purple': '#8B5CF6',
+        'brand-purple-dark': '#9333EA',
+
+        // Typography
+        'brand-text': '#FFFFFF',
+        'brand-body': '#94A3B8',
+        'brand-muted': '#64748B',
+
+        // Legacy mappings to preserve compatibility with existing classes
+        'light-theme-purple': '#16192E',
+        'theme-purple': '#8B5CF6',
+        'dark-theme-purple': '#7C3AED',
+        'theme-blue': '#FFFFFF',
+      },
+      backgroundImage: {
+        'brand-gradient': 'linear-gradient(135deg, #2563EB 0%, #8B5CF6 100%)',
+        'brand-gradient-hover': 'linear-gradient(135deg, #1D4ED8 0%, #7C3AED 100%)',
+        'brand-gradient-subtle': 'linear-gradient(135deg, rgba(37, 99, 235, 0.15) 0%, rgba(139, 92, 246, 0.15) 100%)',
+      },
+      boxShadow: {
+        'brand-glow': '0 0 25px rgba(139, 92, 246, 0.35)',
+        'brand-glow-blue': '0 0 25px rgba(37, 99, 235, 0.35)',
+        'brand-card': '0 10px 30px -10px rgba(0, 0, 0, 0.5)',
       },
       animation: {
         'bounce-x': 'bouncex 1s infinite',
+        'pulse-glow': 'pulseGlow 3s ease-in-out infinite',
+        'float-slow': 'floatSlow 5s ease-in-out infinite',
       },
       keyframes: {
         bouncex: {
@@ -57,6 +60,14 @@ module.exports = {
             animationTimingFunction: 'cubic-bezier(0, 0, 0.2, 1)',
           },
         },
+        pulseGlow: {
+          '0%, 100%': { opacity: '0.3', transform: 'scale(1)' },
+          '50%': { opacity: '0.7', transform: 'scale(1.05)' },
+        },
+        floatSlow: {
+          '0%, 100%': { transform: 'translateY(0px)' },
+          '50%': { transform: 'translateY(-10px)' },
+        },
       },
       spacing: {
         71: '17.75rem',
@@ -66,9 +77,6 @@ module.exports = {
         193: '51rem',
       },
     },
-  },
-  variants: {
-    extend: {},
   },
   plugins: [
     require('@tailwindcss/forms')({

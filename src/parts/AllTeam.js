@@ -1,36 +1,53 @@
-/* eslint-disable linebreak-style */
-/* eslint-disable react/prop-types */
-/* eslint-disable react/jsx-filename-extension */
+/* eslint-disable */
 import React from "react";
-
-import Fade from "react-awesome-reveal";
+import { Fade } from "react-awesome-reveal";
 
 export default function AllTeam({ data }) {
   return (
-    <section className="container mx-0 sm:mx-auto">
-      <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-y-8 gap-x-32 sm:gap-14 lg:gap-10 mx-16 justify-items-center">
-        {data.map((item, index) => (
-          // eslint-disable-next-line react/no-array-index-key
-          <Fade bottom triggerOnce delay={200 * index} key={index}>
-            <div>
-              <div className="flex flex-col w-44 h-60 sm:w-56 sm:h-72 rounded-xl shadow-xl border border-light-theme-purple justify-center transform transition duration-500 hover:scale-105">
-                <div className="flex justify-center xl:mb-5">
+    <section className="relative py-12 pb-28" dir="rtl">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 max-w-5xl mx-auto">
+          {data.map((item, index) => (
+            <Fade
+              direction="up"
+              triggerOnce
+              delay={150 * index}
+              key={item.name || index}
+            >
+              <div className="group relative flex flex-col items-center text-center p-8 rounded-3xl bg-[#111322] border border-white/[0.08] hover:border-purple-500/40 transition-all duration-300 hover:-translate-y-1.5 hover:shadow-[0_20px_40px_-15px_rgba(139,92,246,0.25)] overflow-hidden">
+                
+                {/* Top ambient card glow on hover */}
+                <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-blue-500 to-purple-500 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+
+                {/* Avatar with Radiant Gradient Ring */}
+                <div className="relative mb-6">
+                  <div className="absolute -inset-1.5 bg-gradient-to-tr from-blue-600 to-purple-600 rounded-full blur-sm opacity-70 group-hover:opacity-100 transition duration-300" />
                   <img
                     src={item.imageUrl}
-                    alt="Team Member"
-                    className="flex w-32 h-32 rounded-full"
+                    alt={item.name}
+                    className="relative w-32 h-32 rounded-full object-cover border-2 border-white/20 shadow-xl"
                   />
                 </div>
-                <h2 className="text-theme-blue text-center text-xl">
+
+                {/* Name & Role */}
+                <h3 className="text-xl font-bold text-white mb-2 group-hover:text-purple-300 transition-colors">
                   {item.name}
-                </h2>
-                <p className="font-light text-gray-400 text-center mb-3">
+                </h3>
+                
+                <span className="inline-block px-3.5 py-1 rounded-full text-xs font-medium bg-purple-500/10 text-purple-400 border border-purple-500/20 mb-4">
                   {item.position}
+                </span>
+
+                <p className="text-xs sm:text-sm text-slate-400 leading-relaxed font-normal">
+                  ملتزم بتقديم أعلى درجات الإتقان والجودة التقنية لدعم نمو مشاريع عملائنا وتحقيق أهدافهم.
                 </p>
+
               </div>
-            </div>
-          </Fade>
-        ))}
+            </Fade>
+          ))}
+        </div>
+
       </div>
     </section>
   );

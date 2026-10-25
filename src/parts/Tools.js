@@ -1,7 +1,4 @@
-/* eslint-disable linebreak-style */
-/* eslint-disable react/jsx-filename-extension */
-/* eslint-disable import/extensions */
-
+/* eslint-disable */
 import React from "react";
 import { Fade } from "react-awesome-reveal";
 
@@ -16,146 +13,107 @@ import supabaseLogo from "../assets/images/tools/supabase.png";
 import tailwindLogo from "../assets/images/tools/tailwind.jpg";
 
 const tools = [
-  {
-    id: 1,
-    name: "Hostinger",
-    logo: hostingerLogo,
-    alt: "Hostinger",
-  },
-  {
-    id: 2,
-    name: "WordPress",
-    logo: wordpressLogo,
-    alt: "WordPress",
-  },
-  {
-    id: 3,
-    name: "Next.js",
-    logo: nextjsLogo,
-    alt: "Next.js",
-  },
-  {
-    id: 4,
-    name: "React",
-    logo: reactLogo,
-    alt: "React",
-  },
-  {
-    id: 5,
-    name: "PHP",
-    logo: phpLogo,
-    alt: "PHP",
-  },
-  {
-    id: 6,
-    name: "MySQL",
-    logo: mysqlLogo,
-    alt: "MySQL",
-  },
-  {
-    id: 7,
-    name: "Supabase",
-    logo: supabaseLogo,
-    alt: "Supabase",
-  },
-  {
-    id: 8,
-    name: "Tailwind CSS",
-    logo: tailwindLogo,
-    alt: "Tailwind CSS",
-  },
+  { id: 1, name: "Next.js", logo: nextjsLogo, category: "Framework" },
+  { id: 2, name: "React", logo: reactLogo, category: "UI Library" },
+  { id: 3, name: "Tailwind CSS", logo: tailwindLogo, category: "Styling" },
+  { id: 4, name: "Supabase", logo: supabaseLogo, category: "Backend / Auth" },
+  { id: 5, name: "MySQL", logo: mysqlLogo, category: "Database" },
+  { id: 6, name: "PHP", logo: phpLogo, category: "Backend" },
+  { id: 7, name: "WordPress", logo: wordpressLogo, category: "CMS" },
+  { id: 8, name: "Hostinger", logo: hostingerLogo, category: "Cloud Hosting" },
 ];
 
 export default function Tools() {
   return (
-    <div className="bg-white py-20 mb-24 sm:mb-18 xl:mb-16" dir="rtl">
-      <div className="container mx-auto">
-        <Fade bottom triggerOnce>
-          <h1 className="text-5xl text-theme-blue text-center font-bold mb-4">
-            التقنيات التي نستخدمها
-          </h1>
-          <p className="font-light text-lg text-gray-400 text-center mb-12">
-            نستخدم أحدث التقنيات والأدوات لبناء حلول رقمية متطورة ومتجاوبة
-          </p>
-        </Fade>
+    <section className="relative py-20 overflow-hidden" dir="rtl">
+      {/* Ambient background glow */}
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-3/4 h-64 bg-blue-600/10 rounded-full blur-[120px] pointer-events-none -z-10" />
 
-        {/* Slider */}
-        <Fade bottom triggerOnce delay={300}>
-          <div className="relative overflow-hidden py-4">
-            {/* Slider Container */}
-            <div className="flex">
-              {/* First set of logos */}
-              <div className="flex animate-marquee gap-12 pr-12">
-                {tools.map((tool) => (
-                  <div
-                    key={`first-${tool.id}`}
-                    className="flex items-center justify-center min-w-[120px]"
-                  >
-                    <img
-                      src={tool.logo}
-                      alt={tool.alt}
-                      className="w-20 h-20 object-contain"
-                    />
-                  </div>
-                ))}
-              </div>
-
-              {/* Duplicate set for seamless looping */}
-              <div className="flex animate-marquee gap-12 pr-12">
-                {tools.map((tool) => (
-                  <div
-                    key={`second-${tool.id}`}
-                    className="flex items-center justify-center min-w-[120px]"
-                  >
-                    <img
-                      src={tool.logo}
-                      alt={tool.alt}
-                      className="w-20 h-20 object-contain"
-                    />
-                  </div>
-                ))}
-              </div>
-
-              {/* Third set for continuous flow */}
-              <div className="flex animate-marquee gap-12 pr-12">
-                {tools.map((tool) => (
-                  <div
-                    key={`third-${tool.id}`}
-                    className="flex items-center justify-center min-w-[120px]"
-                  >
-                    <img
-                      src={tool.logo}
-                      alt={tool.alt}
-                      className="w-20 h-20 object-contain"
-                    />
-                  </div>
-                ))}
-              </div>
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+        <Fade direction="up" triggerOnce>
+          <div className="text-center max-w-2xl mx-auto mb-12">
+            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-blue-500/10 border border-blue-500/20 text-blue-400 text-xs font-semibold mb-3">
+              <span>⚡ أحدث حزم التقنيات العالمية</span>
             </div>
+            <h2 className="text-3xl sm:text-4xl font-extrabold text-white tracking-tight mb-4">
+              التقنيات الحديثة <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-400">التي نعتمد عليها</span>
+            </h2>
+            <p className="text-sm sm:text-base text-slate-400 font-normal">
+              نختار بعناية أفضل الأدوات وأكثرها استقرارًا لبناء حلول رقمية فائقة السرعة، متجاوبة، وقابلة للتوسع.
+            </p>
           </div>
         </Fade>
+
+        {/* Marquee with side masks */}
+        <div className="relative overflow-hidden py-4">
+          {/* Edge fade masks */}
+          <div className="absolute top-0 bottom-0 left-0 w-24 bg-gradient-to-r from-[#0A0B14] to-transparent z-20 pointer-events-none" />
+          <div className="absolute top-0 bottom-0 right-0 w-24 bg-gradient-to-l from-[#0A0B14] to-transparent z-20 pointer-events-none" />
+
+          {/* Marquee Container */}
+          <div className="flex animate-marquee-smooth gap-6" dir="ltr">
+            {/* Loop set 1 */}
+            {tools.map((tool) => (
+              <div
+                key={`t1-${tool.id}`}
+                className="flex-shrink-0 flex items-center gap-3.5 px-5 py-3 rounded-2xl bg-[#111322] border border-white/[0.08] hover:border-purple-500/40 shadow-lg hover:shadow-[0_0_20px_rgba(139,92,246,0.2)] transition-all duration-300"
+              >
+                <div className="w-10 h-10 rounded-xl bg-[#16192E] p-1.5 flex items-center justify-center overflow-hidden border border-white/[0.06]">
+                  <img
+                    src={tool.logo}
+                    alt={tool.name}
+                    className="w-full h-full object-contain filter"
+                  />
+                </div>
+                <div className="text-left">
+                  <div className="text-sm font-bold text-white leading-tight">{tool.name}</div>
+                  <div className="text-[11px] text-slate-400">{tool.category}</div>
+                </div>
+              </div>
+            ))}
+
+            {/* Loop set 2 */}
+            {tools.map((tool) => (
+              <div
+                key={`t2-${tool.id}`}
+                className="flex-shrink-0 flex items-center gap-3.5 px-5 py-3 rounded-2xl bg-[#111322] border border-white/[0.08] hover:border-purple-500/40 shadow-lg hover:shadow-[0_0_20px_rgba(139,92,246,0.2)] transition-all duration-300"
+              >
+                <div className="w-10 h-10 rounded-xl bg-[#16192E] p-1.5 flex items-center justify-center overflow-hidden border border-white/[0.06]">
+                  <img
+                    src={tool.logo}
+                    alt={tool.name}
+                    className="w-full h-full object-contain filter"
+                  />
+                </div>
+                <div className="text-left">
+                  <div className="text-sm font-bold text-white leading-tight">{tool.name}</div>
+                  <div className="text-[11px] text-slate-400">{tool.category}</div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+
       </div>
 
-      {/* Animation */}
       <style>{`
-        @keyframes marquee {
+        @keyframes marqueeSmooth {
           0% {
             transform: translateX(0%);
           }
           100% {
-            transform: translateX(100%);
+            transform: translateX(-50%);
           }
         }
-        .animate-marquee {
+        .animate-marquee-smooth {
           display: flex;
-          animation: marquee 20s linear infinite;
+          width: max-content;
+          animation: marqueeSmooth 25s linear infinite;
         }
-        @media (prefers-reduced-motion: reduce) {
-          .animate-marquee {
-            animation: none;
-          }
+        .animate-marquee-smooth:hover {
+          animation-play-state: paused;
         }
       `}</style>
-    </div>
+    </section>
   );
 }
