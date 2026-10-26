@@ -18,13 +18,17 @@
     background-color: #0A0B14;
     color: #94A3B8;
     color-scheme: dark;
+    max-width: 100%;
+    overflow-x: hidden;
   }
 
-  body {
+  body, #root {
     background-color: #0A0B14;
     color: #94A3B8;
     font-family: 'Plus Jakarta Sans', 'Tajawal', 'Inter', system-ui, -apple-system, sans-serif;
+    max-width: 100%;
     overflow-x: hidden;
+    position: relative;
   }
 
   /* Headings typography */

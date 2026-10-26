@@ -5,7 +5,6 @@
 import React, { Component } from "react";
 
 import { Services, Portfolios, Advantages, FeaturedRealProjects } from "json/landingPageData";
-import Header from "parts/Header";
 import Hero from "parts/Hero";
 import Service from "parts/Service";
 import FeaturedProjects from "parts/FeaturedProjects";
@@ -23,7 +22,6 @@ export default class LandingPage extends Component {
   render() {
     return (
       <>
-        <Header />
         <Hero />
         <Service data={Services} />
         <FeaturedProjects data={FeaturedRealProjects} />

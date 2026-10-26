@@ -14,10 +14,12 @@ import { DiscussProjectPage } from "pages/DiscussProjectPage";
 
 import "./assets/css/styles.css";
 import WhatsAppButton from "./parts/WhatsAppButton";
+import BackgroundParticles from "./parts/BackgroundParticles";
 
 function App() {
   return (
     <>
+      <BackgroundParticles />
       <Routes>
         <Route exact path="/" element={<LandingPage />} />
         <Route path="/project" element={<ProjectPage />} />

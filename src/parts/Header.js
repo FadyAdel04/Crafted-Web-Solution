@@ -10,7 +10,7 @@ import { Transition } from "@headlessui/react";
 import Button from "../elements/Button";
 import BrandLogo from "./BrandLogo";
 
-export default function Header() {
+export default function Header({ isHeroOverlay = false, className = "" }) {
   const [isCollapse, setIsCollapse] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const location = useLocation();
@@ -29,13 +29,17 @@ export default function Header() {
     setIsCollapse(false);
   }, [location]);
 
+  const overlayClasses = scrolled
+    ? "fixed top-0 left-0 right-0 z-50 bg-[#0A0B14]/90 backdrop-blur-xl border-b border-white/[0.08] shadow-[0_10px_30px_rgba(0,0,0,0.5)] py-3.5"
+    : "absolute top-0 left-0 right-0 z-30 bg-transparent border-b border-white/[0.08] py-5";
+
+  const standardClasses = scrolled
+    ? "sticky top-0 z-50 w-full bg-[#0A0B14]/85 backdrop-blur-xl border-b border-white/[0.08] shadow-[0_10px_30px_rgba(0,0,0,0.5)] py-3"
+    : "sticky top-0 z-50 w-full bg-[#0A0B14]/60 backdrop-blur-md border-b border-white/[0.05] py-4";
+
   return (
     <header
-      className={`sticky top-0 z-50 w-full transition-all duration-300 ${
-        scrolled
-          ? "bg-[#0A0B14]/85 backdrop-blur-xl border-b border-white/[0.08] shadow-[0_10px_30px_rgba(0,0,0,0.5)] py-3"
-          : "bg-[#0A0B14]/60 backdrop-blur-md border-b border-white/[0.05] py-4"
-      }`}
+      className={`${isHeroOverlay ? overlayClasses : standardClasses} transition-all duration-300 ${className}`}
       dir="rtl"
     >
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
