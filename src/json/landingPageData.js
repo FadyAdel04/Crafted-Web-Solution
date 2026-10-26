@@ -5,6 +5,12 @@ import web from "../assets/images/Services/Web.png";
 import digital from "../assets/images/Services/Mobile.png";
 import creative from "../assets/images/Services/creative.png";
 
+// استيراد صور المشاريع الحقيقية المنفذة للعملاء (Real-World Client Projects)
+import leidenschaftReal from "../assets/images/Portfolio/leidenschaft_real.png";
+import leidenschaftLogo from "../assets/images/Portfolio/leidenschaft_logo.jpg";
+import andalusiaReal from "../assets/images/Portfolio/andalusia_real.png";
+import andalusiaLogo from "../assets/images/Portfolio/andalusia_logo.png";
+
 // استيراد صور الأعمال (Portfolio)
 import wedding from "../assets/images/Portfolio/wedding.png";
 import wedding2 from "../assets/images/Portfolio/wedding2.png";
@@ -63,7 +69,89 @@ export const Services = [
   },
 ];
 
+// مشاريع حقيقية منفذة للعملاء (Verified Shipped Real-World Client Projects)
+export const FeaturedRealProjects = [
+  {
+    id: "leidenschaft-klub",
+    title: "Leidenschaft Klub — المنصة الألمانية بالإسكندرية",
+    client: "Leidenschaft Klub",
+    type: "E-Learning",
+    badge: "منصة تعليمية حية",
+    imageUrl: leidenschaftReal,
+    logoUrl: leidenschaftLogo,
+    credit: "https://www.leidenschaftklub.com/",
+    isShippedClientWork: true,
+    tagline: "منصة تعليمية متطورة لتعلم وإتقان اللغة الألمانية بالإسكندرية",
+    description: "المنصة الرسمية لمركز Leidenschaft Klub في الإسكندرية. تقدم مسارات تعلم منظمة، وتصفح المستويات التعليمية وحجز الكورسات، ونظام إشعارات فوري، مع واجهة عربية ولاتينية سريعة ومتجاوبة بالكامل.",
+    responsibility: [
+      "تطوير واجهة مستخدم تفاعلية وسريعة بـ React",
+      "تكامل قاعدة البيانات والخدمات السحابية بـ Supabase",
+      "نظام حجز الكورسات والمسارات التعليمية",
+      "تصميم متوافق بنسبة 100% مع كافة الشاشات والأجهزة",
+    ],
+    techStack: ["React", "Supabase", "Tailwind CSS", "Framer Motion", "Vite"],
+    highlights: [
+      "منصة إنتاجية حية (Live in Production)",
+      "نظام حجز وتصفح دورات تفاعلي",
+      "تكامل سلس مع وسائل التواصل وخدمة الطلاب",
+    ],
+  },
+  {
+    id: "andalusia-marine",
+    title: "Andalusia Marine — صيانة محركات وبناء سفن",
+    client: "Andalusia Marine",
+    type: "Business Website",
+    badge: "موقع مؤسسي رسمي",
+    imageUrl: andalusiaReal,
+    logoUrl: andalusiaLogo,
+    credit: "https://andalusiaamarine.com/",
+    isShippedClientWork: true,
+    tagline: "المنصة الرقمية الرسمية لأعمال الهندسة وصيانة المحركات البحرية وبناء السفن",
+    description: "الموقع التعريفي والتجاري الرسمي لشركة أندلسية مارين في رشيد، المتخصصة في صيانة المحركات البحرية الكبرى (Caterpillar, Cummins)، وبناء وتصميم السفن واليخوت السياحية، وتجارة المعدات. يتميز بنظام ثنائي اللغة، والوضعين المظلم والفاتح، ونموذج طلب خدمات متقدم.",
+    responsibility: [
+      "تطوير موقع فائق السرعة والأداء مبني بـ Next.js",
+      "دعم ثنائي اللغة (عربي / إنجليزي AR & EN)",
+      "دعم كامل للوضعين الداكن والفاتح (Dark / Light Mode)",
+      "هندسة متقدمة لتحسين محركات البحث المحلية والعالمية (SEO)",
+    ],
+    techStack: ["Next.js", "React", "Tailwind CSS", "Dark / Light Mode", "SEO Architecture"],
+    highlights: [
+      "موقع منشور رسميًا ويخدم قطاع النقل والملاحة البحرية",
+      "نموذج تفاعلي لطلب الخدمات وعروض الأسعار",
+      "تكامل مع خرائط جوجل والاتصال السريع عبر واتساب",
+    ],
+  },
+  {
+    id: "desktop-financial-pos",
+    title: "Desktop Financial Tracker & POS — نظام مالي ونقاط بيع مكتبي",
+    client: "نظام مكتبي تجاري",
+    type: "Desktop Application",
+    badge: "برمجية سطح مكتب",
+    imageUrl: null, // Actual screenshot is not available in the repository
+    logoUrl: null,
+    credit: null, // Desktop application has no public web URL
+    demoHref: "/discuss-project",
+    isShippedClientWork: true,
+    isDesktop: true,
+    tagline: "برمجية سطح مكتب مستقلة لإدارة المبيعات، الفواتير، والتدفقات المالية اليومية",
+    description: "نظام مكتبي مصمم لإدارة نقاط البيع (POS) وتتبع العمليات المالية والمصروفات بدقة واحترافية. يعمل دون الحاجة لاتصال بالإنترنت (Offline-First) لضمان أعلى مستويات الاستمرارية والخصوصية التامة للبيانات التجارية للشركات والمتاجر.",
+    responsibility: [
+      "محرك نقاط البيع وإصدار الفواتير الفوري",
+      "إدارة اليوميات المحاسبية وتتبع التدفق النقدي",
+      "تخزين وتشغيل محلي آمن ومستقل تمامًا (Offline-First)",
+      "تقارير مالية تفصيلية ومؤشرات أداء قابلة للتصدير",
+    ],
+    techStack: ["Desktop Application", "POS Engine", "Financial Ledger", "Offline-First Storage"],
+    highlights: [
+      "يعمل بدون إنترنت (Offline-First) بأعلى درجات الأمان",
+      "استجابة فورية بدون بطء أو تأخير في الشبكة",
+      "متاح للعرض التجريبي المباشر (Request a Demo)",
+    ],
+  },
+];
+
 export const Portfolios = [
+  ...FeaturedRealProjects,
   {
     id: "wedding1",
     title: "دعوة زفاف",

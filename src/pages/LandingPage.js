@@ -4,10 +4,11 @@
 /* eslint-disable react/jsx-filename-extension */
 import React, { Component } from "react";
 
-import { Services, Portfolios, Advantages } from "json/landingPageData";
+import { Services, Portfolios, Advantages, FeaturedRealProjects } from "json/landingPageData";
 import Header from "parts/Header";
 import Hero from "parts/Hero";
 import Service from "parts/Service";
+import FeaturedProjects from "parts/FeaturedProjects";
 import Portfolio from "parts/Portfolio";
 import Advantage from "parts/Advantage";
 import Tools from "parts/Tools";
@@ -25,6 +26,7 @@ export default class LandingPage extends Component {
         <Header />
         <Hero />
         <Service data={Services} />
+        <FeaturedProjects data={FeaturedRealProjects} />
         <Portfolio data={Portfolios} />
         <Advantage data={Advantages} />
         <Tools />

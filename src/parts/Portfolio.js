@@ -6,13 +6,14 @@ import Button from "../elements/Button";
 export default function Portfolio({ data }) {
   const categories = [
     { key: "All", label: "أبرز الأعمال" },
+    { key: "Desktop Application", label: "أنظمة سطح المكتب" },
+    { key: "Business Website", label: "مواقع شركات" },
+    { key: "E-Learning", label: "منصات تعليمية" },
     { key: "Landing Page", label: "صفحات هبوط" },
     { key: "E-commerce", label: "متاجر إلكترونية" },
     { key: "Invitation", label: "دعوات رقمية" },
-    { key: "Business Website", label: "مواقع شركات" },
     { key: "Portfolio", label: "بورتفوليو" },
     { key: "Digital Menu", label: "قوائم طعام" },
-    { key: "E-Learning", label: "منصات تعليمية" },
   ];
 
   const [activeCategory, setActiveCategory] = useState("All");
@@ -162,11 +163,21 @@ export default function Portfolio({ data }) {
               >
                 {/* Centered Image with Reduced Width */}
                 <div className="relative w-[72%] sm:w-[70%] h-full mx-auto overflow-hidden shadow-2xl">
-                  <img
-                    src={item.imageUrl}
-                    alt={item.title}
-                    className="w-full h-full object-cover object-top filter transition-transform duration-700"
-                  />
+                  {item.imageUrl ? (
+                    <img
+                      src={item.imageUrl}
+                      alt={item.title}
+                      className="w-full h-full object-cover object-top filter transition-transform duration-700"
+                    />
+                  ) : (
+                    <div className="w-full h-full flex flex-col items-center justify-center p-6 bg-gradient-to-br from-[#16192E] to-[#0A0B14] text-center border border-purple-500/20">
+                      <div className="w-14 h-14 rounded-2xl bg-purple-500/20 text-purple-300 flex items-center justify-center mb-3 text-2xl font-mono">
+                        🖥️
+                      </div>
+                      <div className="text-sm font-bold text-white mb-1">Desktop Software</div>
+                      <div className="text-xs text-purple-300 font-mono">Financial Tracker & POS</div>
+                    </div>
+                  )}
                   {/* Side Edge Fade Blending seamlessly into dark card */}
                   <div className="absolute inset-y-0 left-0 w-8 bg-gradient-to-r from-[#111322] to-transparent pointer-events-none" />
                   <div className="absolute inset-y-0 right-0 w-8 bg-gradient-to-l from-[#111322] to-transparent pointer-events-none" />
@@ -184,7 +195,7 @@ export default function Portfolio({ data }) {
                 {/* Top Category Badge */}
                 <div className="absolute top-4 right-4 z-20">
                   <span className="px-3 py-1 rounded-full text-[11px] font-semibold bg-[#0A0B14]/85 backdrop-blur-md text-purple-300 border border-purple-500/30 shadow-md">
-                    {item.type}
+                    {item.badge || item.type}
                   </span>
                 </div>
 
@@ -212,7 +223,7 @@ export default function Portfolio({ data }) {
                     {/* Quick Action on Active Card */}
                     {isActive && (
                       <div className="flex items-center gap-2 flex-shrink-0 pt-2 sm:pt-0">
-                        {item.credit && (
+                        {item.credit ? (
                           <Button
                             href={item.credit}
                             type="link"
@@ -225,7 +236,18 @@ export default function Portfolio({ data }) {
                               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
                             </svg>
                           </Button>
-                        )}
+                        ) : item.isDesktop ? (
+                          <Button
+                            href="/discuss-project"
+                            type="link"
+                            className="inline-flex items-center justify-center gap-1.5 py-2 px-3.5 rounded-xl text-xs font-bold text-white bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-500 hover:to-blue-500 transition-all shadow-md no-underline whitespace-nowrap"
+                          >
+                            <span>طلب ديمو</span>
+                            <svg className="w-3.5 h-3.5 transform rotate-180" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                            </svg>
+                          </Button>
+                        ) : null}
 
                         <Button
                           href={`/project/${item.id}`}
