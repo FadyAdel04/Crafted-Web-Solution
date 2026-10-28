@@ -27,7 +27,6 @@ export default class LandingPage extends Component {
         <FeaturedProjects data={FeaturedRealProjects} />
         <Portfolio data={Portfolios} />
         <Advantage data={Advantages} />
-        <Tools />
         <Discuss />
         <Footer />
       </>

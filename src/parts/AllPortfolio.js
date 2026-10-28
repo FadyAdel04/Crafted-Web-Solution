@@ -13,7 +13,7 @@ export default function AllPortfolio({ data }) {
     { key: "Desktop Application", label: "أنظمة سطح المكتب" },
     { key: "Business Website", label: "مواقع أعمال وشركات" },
     { key: "E-Learning", label: "منصات تعليمية" },
-    { key: "Landing Page", label: "صفحات هبوط" },
+    { key: "Landing Page", label: "صفحات تعريفية" },
     { key: "Invitation", label: "دعوات رقمية" },
     { key: "Portfolio", label: "بورتفوليو وسير ذاتية" },
     { key: "Digital Menu", label: "قوائم طعام ذكية" },

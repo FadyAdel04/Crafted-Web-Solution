@@ -9,7 +9,7 @@ export default function Portfolio({ data }) {
     { key: "Desktop Application", label: "أنظمة سطح المكتب" },
     { key: "Business Website", label: "مواقع شركات" },
     { key: "E-Learning", label: "منصات تعليمية" },
-    { key: "Landing Page", label: "صفحات هبوط" },
+    { key: "Landing Page", label: "صفحات تعريفية" },
     { key: "E-commerce", label: "متاجر إلكترونية" },
     { key: "Invitation", label: "دعوات رقمية" },
     { key: "Portfolio", label: "بورتفوليو" },
@@ -46,11 +46,10 @@ export default function Portfolio({ data }) {
   // Keyboard navigation
   useEffect(() => {
     const handleKeyDown = (e) => {
-      // In RTL: ArrowRight moves to previous card, ArrowLeft moves to next card
       if (e.key === "ArrowLeft") {
-        handleNext();
-      } else if (e.key === "ArrowRight") {
         handlePrev();
+      } else if (e.key === "ArrowRight") {
+        handleNext();
       }
     };
 
@@ -68,11 +67,11 @@ export default function Portfolio({ data }) {
     const diff = e.changedTouches[0].clientX - touchStartX.current;
     if (Math.abs(diff) > 40) {
       if (diff > 0) {
-        // Swiped right (in RTL: next / forward)
-        handleNext();
-      } else {
-        // Swiped left
+        // Swiped right -> previous
         handlePrev();
+      } else {
+        // Swiped left -> next
+        handleNext();
       }
     }
     touchStartX.current = null;
@@ -161,8 +160,8 @@ export default function Portfolio({ data }) {
                   if (!isActive) setActive(index);
                 }}
               >
-                {/* Centered Image with Reduced Width */}
-                <div className="relative w-[72%] sm:w-[70%] h-full mx-auto overflow-hidden shadow-2xl">
+                {/* Full-width Image without side shadow fade */}
+                <div className="relative w-full h-full overflow-hidden shadow-2xl">
                   {item.imageUrl ? (
                     <img
                       src={item.imageUrl}
@@ -178,9 +177,6 @@ export default function Portfolio({ data }) {
                       <div className="text-xs text-purple-300 font-mono">Financial Tracker & POS</div>
                     </div>
                   )}
-                  {/* Side Edge Fade Blending seamlessly into dark card */}
-                  <div className="absolute inset-y-0 left-0 w-8 bg-gradient-to-r from-[#111322] to-transparent pointer-events-none" />
-                  <div className="absolute inset-y-0 right-0 w-8 bg-gradient-to-l from-[#111322] to-transparent pointer-events-none" />
                 </div>
 
                 {/* Top-Left Radial Sheen */}
@@ -272,11 +268,11 @@ export default function Portfolio({ data }) {
             Coverflow Controls (Round Glass Prev / Dots / Next)
            ======================================================== */}
         <div className="flex items-center justify-center gap-6 mt-6">
-          {/* Prev Button (In RTL, right arrow moves to prev) */}
+          {/* Right Button (In RTL, right arrow moves to next) */}
           <button
-            onClick={handlePrev}
+            onClick={handleNext}
             className="cf-nav-btn"
-            aria-label="المشروع السابق"
+            aria-label="المشروع التالي"
           >
             <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M9 5l7 7-7 7" />
@@ -295,11 +291,11 @@ export default function Portfolio({ data }) {
             ))}
           </div>
 
-          {/* Next Button (In RTL, left arrow moves to next) */}
+          {/* Left Button (In RTL, left arrow moves to prev) */}
           <button
-            onClick={handleNext}
+            onClick={handlePrev}
             className="cf-nav-btn"
-            aria-label="المشروع التالي"
+            aria-label="المشروع السابق"
           >
             <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M15 19l-7-7 7-7" />

@@ -83,7 +83,7 @@ export default function Hero() {
           {/* Subtitle / Paragraph */}
           <Fade direction="up" triggerOnce delay={300}>
             <p className="text-base sm:text-lg lg:text-xl text-slate-300/90 leading-relaxed font-normal max-w-2xl sm:max-w-3xl mb-8 sm:mb-10 drop-shadow-md">
-              نصنع تجارب ومواقع استثنائية تواكب نمو أعمالك: صفحات هبوط تسويقية،
+              نصنع تجارب ومواقع استثنائية تواكب نمو أعمالك: صفحات تعريفية تسويقية،
               مواقع شركات، متاجر إلكترونية متكاملة، وقوائم رقمية ذكية بتصاميم حديثة وأداء فائق السرعة.
             </p>
           </Fade>
