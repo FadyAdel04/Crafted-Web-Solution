@@ -4,34 +4,6 @@ import { Fade } from 'react-awesome-reveal';
 import Button from '../elements/Button';
 
 export default function DigitalTransformation() {
-  const comparisonItems = [
-    {
-      criteria: 'استقبال العملاء والمبيعات',
-      traditional: 'تتوقف بمجرد انتهاء ساعات العمل؛ وتخسر العملاء ليلاً وفي العطلات.',
-      crafted: 'منظومة آلية تعمل 24/7 تستقبل الطلبات والمدفوعات حتى أثناء نومك.',
-    },
-    {
-      criteria: 'سرعة تحويل الزائر إلى مشترٍ',
-      traditional: 'انتظار طويل للرد في الشات؛ 60% من الزوار يغادرون ويشترون من المنافس الأسرع.',
-      crafted: 'سلة شراء وحجز بضغطة زر واحدة ودفع إلكتروني فوري مع تأكيد لحظي عبر واتساب.',
-    },
-    {
-      criteria: 'الملكية والأمان والاستقلالية',
-      traditional: 'تحت رحمة خوارزميات السوشيال ميديا؛ وإذا أُغلق الحساب يتوقف عملك تماماً.',
-      crafted: 'أصل رقمي مستقل ملكك 100% بنطاقك الخاص وقاعدة بياناتك المحمية التي لا يفقدها أحد.',
-    },
-    {
-      criteria: 'إدارة العمليات وتكلفة الوقت',
-      traditional: 'إهدار عشرات الساعات أسبوعياً في تسجيل الفواتير اليدوية والرد على نفس الأسئلة.',
-      crafted: 'أتمتة الفواتير، الإشعارات، وتحديث المخزون بنقرة واحدة وتوفير أكثر من 70% من وقت فريقك.',
-    },
-    {
-      criteria: 'الانطباع الأول وهيبة العلامة',
-      traditional: 'مظهر متواضع يجعلك تبدو كنشاط صغير ويفقدك الصفقات والعقود الكبرى.',
-      crafted: 'واجهة فاخرة فائقة السرعة تُجبر كبار العملاء والشركات على احترام علامتك والوثوق بها فوراً.',
-    },
-  ];
-
   const suggestions = [
     {
       sector: 'المتاجر والبراندات التجارية',
@@ -94,69 +66,20 @@ export default function DigitalTransformation() {
 
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         
-        {/* Main Section Header */}
-        <div className="text-center max-w-4xl mx-auto mb-16">
-          <Fade direction="up" triggerOnce>
-            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 text-xs sm:text-sm font-semibold mb-4">
-              <span>💡 دليلك لاتخاذ القرار الصحيح لمستقبل عملك</span>
-            </div>
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-white tracking-tight mb-5 leading-tight">
-              لماذا لا يمكنك الانتظار أكثر؟ <br />
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 via-teal-300 to-blue-400">
-                تكلفة عدم التحرك الرقمي وخسارة الفرص
-              </span>
-            </h2>
-            <p className="text-base sm:text-lg text-slate-300 font-normal leading-relaxed max-w-3xl mx-auto">
-              في عالم اليوم، عدم امتلاك موقع ونظام رقمي ليس مجرد غياب أداة؛ بل هو نزيف يومي مستمر في مبيعاتك وثقة عملائك لصالح المنافسين الذين سبقوك بخطوة.
-            </p>
-          </Fade>
-        </div>
-
-        {/* 1. Comparison Matrix: Traditional vs Crafted Web Solutions */}
+        {/* Industry-Specific Recommendations */}
         <div className="mb-20">
-          <Fade direction="up" triggerOnce delay={100}>
-            <div className="rounded-3xl bg-[#111322] border border-white/[0.1] shadow-2xl overflow-hidden">
-              <div className="grid grid-cols-1 md:grid-cols-12 bg-[#16192E] p-4 sm:p-6 border-b border-white/[0.08] text-center font-bold text-sm sm:text-base">
-                <div className="md:col-span-4 text-slate-400 text-right pr-2">معيار المقارنة الجوهري</div>
-                <div className="md:col-span-4 text-rose-400 flex items-center justify-center gap-2">
-                  <span>❌ العمل بالأسلوب التقليدي / السوشيال فقط</span>
-                </div>
-                <div className="md:col-span-4 text-emerald-400 flex items-center justify-center gap-2">
-                  <span>✅ منظومة Crafted Web Solutions الرقمية</span>
-                </div>
+          <div className="text-center max-w-3xl mx-auto mb-14">
+            <Fade direction="up" triggerOnce>
+              <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 text-xs sm:text-sm font-semibold mb-4">
+                <span>💡 حلول رقمية مخصصة لقطاعك</span>
               </div>
-
-              <div className="divide-y divide-white/[0.06]">
-                {comparisonItems.map((item, idx) => (
-                  <div
-                    key={idx}
-                    className="grid grid-cols-1 md:grid-cols-12 p-4 sm:p-6 gap-4 items-center hover:bg-white/[0.02] transition-colors"
-                  >
-                    <div className="md:col-span-4 text-white font-bold text-sm sm:text-base">
-                      {item.criteria}
-                    </div>
-                    <div className="md:col-span-4 text-slate-400 text-xs sm:text-sm bg-rose-950/20 md:bg-transparent p-3 md:p-0 rounded-xl border border-rose-500/20 md:border-none leading-relaxed">
-                      {item.traditional}
-                    </div>
-                    <div className="md:col-span-4 text-slate-200 text-xs sm:text-sm font-medium bg-emerald-950/20 md:bg-transparent p-3 md:p-0 rounded-xl border border-emerald-500/20 md:border-none leading-relaxed">
-                      {item.crafted}
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </div>
-          </Fade>
-        </div>
-
-        {/* 2. Industry-Specific Recommendations */}
-        <div className="mb-20">
-          <div className="text-center max-w-2xl mx-auto mb-12">
-            <h3 className="text-2xl sm:text-3xl font-extrabold text-white mb-3">
-              اقتراحات مخصصة لقطاع عملك
-            </h3>
-            <p className="text-sm sm:text-base text-slate-400">
-              مهما كان مجالك، لدينا خطة عمل مجربة تضمن تحقيق أقصى عائد على استثمارك الرقمي
-            </p>
+              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-white tracking-tight mb-4">
+                اقتراحات مخصصة لقطاع عملك
+              </h2>
+              <p className="text-base sm:text-lg text-slate-300 font-normal leading-relaxed">
+                مهما كان مجالك، لدينا خطة عمل مجربة تضمن تحقيق أقصى عائد على استثمارك الرقمي
+              </p>
+            </Fade>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8">

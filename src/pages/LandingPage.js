@@ -8,15 +8,11 @@ import { Portfolios } from "json/landingPageData";
 
 // Core High-Converting Landing Page Components
 import Hero from "parts/Hero";
-import SocialProofBar from "parts/SocialProofBar";
 import SolutionShowcase from "parts/SolutionShowcase";
 import DigitalTransformation from "parts/DigitalTransformation";
 import KeyFeatures from "parts/KeyFeatures";
-import CredibilityStats from "parts/CredibilityStats";
-import BentoBenefits from "parts/BentoBenefits";
 import Portfolio from "parts/Portfolio";
 import HowItWorks from "parts/HowItWorks";
-import IntegrationsSection from "parts/IntegrationsSection";
 import FaqAccordion from "parts/FaqAccordion";
 import Discuss from "parts/Discuss";
 import Footer from "parts/Footer";
@@ -49,9 +45,6 @@ export default class LandingPage extends Component {
         {/* 1. الرئيسية: Hero Section */}
         <Hero />
 
-        {/* شريط الإثبات الاجتماعي */}
-        <SocialProofBar />
-
         {/* 2. الحلول: Interactive Solution Showcase with Real Sites & Links */}
         <SolutionShowcase />
 
@@ -61,18 +54,11 @@ export default class LandingPage extends Component {
         {/* 4. المميزات: Key Features (3 Core SaaS Pillars) */}
         <KeyFeatures />
 
-        {/* إحصائيات المصداقية وشبكة الفوائد */}
-        <CredibilityStats />
-        <BentoBenefits />
-
         {/* 5. المشاريع: Full Interactive Portfolio Carousel */}
         <Portfolio data={Portfolios} />
 
         {/* 6. كيف نعمل: 3 Easy Steps to Onboarding */}
         <HowItWorks />
-
-        {/* تكامل الأنظمة والأدوات */}
-        <IntegrationsSection />
 
         {/* 7. الأسئلة الشائعة: FAQ Accordion */}
         <FaqAccordion />
