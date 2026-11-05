@@ -80,7 +80,7 @@ export default function Portfolio({ data }) {
   const activeProject = items[active] || items[0];
 
   return (
-    <section className="relative py-20 lg:py-28 overflow-hidden" dir="rtl" id="portfolio">
+    <section className="relative py-20 lg:py-28 overflow-hidden scroll-mt-20 sm:scroll-mt-24" dir="rtl" id="portfolio">
       {/* Aurora Ambient Lighting Blobs */}
       <div className="absolute top-1/4 -right-20 w-[550px] h-[550px] bg-blue-600/15 rounded-full blur-[140px] pointer-events-none -z-10" />
       <div className="absolute bottom-1/4 -left-20 w-[600px] h-[600px] bg-purple-600/15 rounded-full blur-[150px] pointer-events-none -z-10" />

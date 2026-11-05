@@ -31,6 +31,7 @@ export default function Hero() {
 
   return (
     <section 
+      id="hero"
       className="relative w-full min-h-[100dvh] overflow-hidden flex flex-col justify-between" 
       dir="rtl"
     >
@@ -65,7 +66,7 @@ export default function Hero() {
             <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/[0.08] border border-white/[0.15] backdrop-blur-md mb-6 shadow-inner">
               <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
               <span className="text-xs sm:text-sm font-medium text-slate-200">
-                متاح لاستقبال مشاريع جديدة
+                شركة تصميم وتطوير مواقع ومتاجر إلكترونية احترافية
               </span>
             </div>
           </Fade>
@@ -73,18 +74,17 @@ export default function Hero() {
           {/* Main Headline */}
           <Fade direction="up" triggerOnce delay={200}>
             <h1 className="text-3xl sm:text-5xl lg:text-6xl font-black text-white leading-[1.25] sm:leading-[1.18] tracking-tight mb-5 drop-shadow-xl">
-              حلول ويب مبتكرة{" "}
+              امتلك منصة رقمية متطورة تُضاعف مبيعاتك{" "}
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-indigo-300 to-purple-400">
-                مصممة خصيصًا لرؤيتك
+                — دون تعقيدات تقنية أو تكاليف مهدرة
               </span>
             </h1>
           </Fade>
 
-          {/* Subtitle / Paragraph */}
+          {/* Subtitle / Paragraph with Rich SEO Keywords */}
           <Fade direction="up" triggerOnce delay={300}>
             <p className="text-base sm:text-lg lg:text-xl text-slate-300/90 leading-relaxed font-normal max-w-2xl sm:max-w-3xl mb-8 sm:mb-10 drop-shadow-md">
-              نصنع تجارب ومواقع استثنائية تواكب نمو أعمالك: صفحات تعريفية تسويقية،
-              مواقع شركات، متاجر إلكترونية متكاملة، وقوائم رقمية ذكية بتصاميم حديثة وأداء فائق السرعة.
+              نحوّل مشروعك إلى منظومة رقمية متكاملة: مواقع شركات عصرية، متاجر إلكترونية سريعة، وأنظمة إدارة مبيعات (POS)؛ مهيأة بالكامل لتصدر محركات البحث (SEO) وأتمتة استقبال الطلبات والمدفوعات 24/7.
             </p>
           </Fade>
 
@@ -97,7 +97,7 @@ export default function Hero() {
                 type="link"
                 className="group relative inline-flex items-center justify-center gap-2.5 px-7 py-3.5 sm:py-4 text-sm sm:text-base font-semibold text-white rounded-xl bg-gradient-to-r from-blue-600 via-indigo-600 to-purple-600 hover:from-blue-500 hover:via-indigo-500 hover:to-purple-500 shadow-[0_0_25px_rgba(99,102,241,0.4)] hover:shadow-[0_0_35px_rgba(99,102,241,0.6)] transition-all duration-300 hover:-translate-y-0.5 no-underline w-full sm:w-auto"
               >
-                <span>ناقش مشروعك الآن</span>
+                <span>ابدأ استشارتك المجانية الآن</span>
                 <svg
                   className="w-4 h-4 sm:w-5 sm:h-5 transform rotate-180 group-hover:-translate-x-1 transition-transform duration-200"
                   xmlns="http://www.w3.org/2000/svg"
@@ -115,7 +115,7 @@ export default function Hero() {
                 type="link"
                 className="inline-flex items-center justify-center gap-2.5 px-7 py-3.5 sm:py-4 text-sm sm:text-base font-medium text-slate-200 hover:text-white rounded-xl bg-white/[0.06] hover:bg-white/[0.12] border border-white/[0.15] hover:border-white/[0.3] backdrop-blur-md transition-all duration-300 hover:-translate-y-0.5 no-underline w-full sm:w-auto shadow-sm"
               >
-                <span>استعرض أعمالنا</span>
+                <span>استعرض سابقة أعمالنا</span>
                 <svg className="w-4 h-4 sm:w-5 sm:h-5 text-purple-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />

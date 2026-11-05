@@ -126,21 +126,10 @@ export default function Footer() {
 
         </div>
 
-        {/* Bottom Copyright & Design Credits */}
+        {/* Bottom Copyright */}
         <div className="pt-8 flex flex-col sm:flex-row items-center justify-between text-xs sm:text-sm text-slate-500 gap-4">
           <p>© {currentYear} Crafted Web Solutions — جميع الحقوق محفوظة</p>
-          <div className="flex items-center gap-1.5">
-            <span>صُنع بشغف 💜 بواسطة</span>
-            <Button
-              href="https://fadyadel-fady-adels-projects.vercel.app/"
-              type="link"
-              target="_blank"
-              isExternal
-              className="text-purple-400 hover:text-purple-300 font-semibold no-underline transition-colors"
-            >
-              فادي عادل
-            </Button>
-          </div>
+          <p className="text-slate-400">حلول رقمية متكاملة مصممة لنمو أعمالك</p>
         </div>
 
       </div>

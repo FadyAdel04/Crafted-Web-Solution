@@ -29,6 +29,41 @@ export default function Header({ isHeroOverlay = false, className = "" }) {
     setIsCollapse(false);
   }, [location]);
 
+  // Unified Section Links in exact sequential order of the landing page
+  const navItems = [
+    { label: "الرئيسية", targetId: "hero", href: "/#hero" },
+    { label: "الحلول", targetId: "solutions", href: "/#solutions" },
+    {
+      label: "لماذا التحول الرقمي؟",
+      targetId: "why-digital",
+      href: "/#why-digital",
+      isHighlight: true,
+    },
+    { label: "المميزات", targetId: "features", href: "/#features" },
+    { label: "المشاريع", targetId: "portfolio", href: "/#portfolio" },
+    { label: "كيف نعمل", targetId: "how-it-works", href: "/#how-it-works" },
+    { label: "الأسئلة الشائعة", targetId: "faq", href: "/#faq" },
+  ];
+
+  // Precision Smooth Scroll Handler with sticky header offset
+  const handleNavClick = (e, item) => {
+    if (path === "/" || path === "") {
+      e.preventDefault();
+      const element = document.getElementById(item.targetId);
+      if (element) {
+        const headerOffset = 85;
+        const elementPosition = element.getBoundingClientRect().top;
+        const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+        window.scrollTo({
+          top: item.targetId === "hero" ? 0 : offsetPosition,
+          behavior: "smooth",
+        });
+        window.history.pushState(null, "", `#${item.targetId}`);
+      }
+    }
+    setIsCollapse(false);
+  };
+
   const overlayClasses = scrolled
     ? "fixed top-0 left-0 right-0 z-50 bg-[#0A0B14]/90 backdrop-blur-xl border-b border-white/[0.08] shadow-[0_10px_30px_rgba(0,0,0,0.5)] py-3.5"
     : "absolute top-0 left-0 right-0 z-30 bg-transparent border-b border-white/[0.08] py-5";
@@ -49,31 +84,22 @@ export default function Header({ isHeroOverlay = false, className = "" }) {
             <BrandLogo size="md" />
           </div>
 
-          {/* Desktop Navigation Links */}
+          {/* Desktop Navigation Links (Ordered to match physical page layout) */}
           <nav className="hidden lg:flex items-center gap-1 xl:gap-2">
-            <Button
-              className={`px-4 py-2 rounded-lg text-sm font-medium transition-all duration-200 no-underline ${
-                path === "/"
-                  ? "text-white bg-white/[0.06] shadow-inner"
-                  : "text-slate-300 hover:text-white hover:bg-white/[0.04]"
-              }`}
-              type="link"
-              href="/"
-            >
-              الرئيسية
-            </Button>
-
-            <Button
-              className={`px-4 py-2 rounded-lg text-sm font-medium transition-all duration-200 no-underline ${
-                path === "/project"
-                  ? "text-white bg-white/[0.06] shadow-inner"
-                  : "text-slate-300 hover:text-white hover:bg-white/[0.04]"
-              }`}
-              type="link"
-              href="/project"
-            >
-              الخدمات والمشاريع
-            </Button>
+            {navItems.map((item) => (
+              <a
+                key={item.targetId}
+                href={item.href}
+                onClick={(e) => handleNavClick(e, item)}
+                className={`px-3 py-2 rounded-lg text-sm font-medium transition-all duration-200 no-underline ${
+                  item.isHighlight
+                    ? "text-emerald-400 hover:text-emerald-300 hover:bg-emerald-500/10"
+                    : "text-slate-300 hover:text-white hover:bg-white/[0.05]"
+                }`}
+              >
+                {item.label}
+              </a>
+            ))}
           </nav>
 
           {/* Desktop CTA Action */}
@@ -128,26 +154,21 @@ export default function Header({ isHeroOverlay = false, className = "" }) {
         leaveFrom="opacity-100 translate-y-0"
         leaveTo="opacity-0 -translate-y-4"
       >
-        <div className="lg:hidden border-b border-white/[0.08] bg-[#0A0B14]/95 backdrop-blur-2xl px-5 pt-4 pb-6 space-y-3 shadow-2xl">
-          <Button
-            className={`block w-full text-right px-4 py-3 rounded-xl text-base font-medium transition duration-200 no-underline ${
-              path === "/" ? "text-white bg-blue-600/20 border border-blue-500/30" : "text-slate-300 hover:text-white hover:bg-white/[0.05]"
-            }`}
-            type="link"
-            href="/"
-          >
-            الرئيسية
-          </Button>
-
-          <Button
-            className={`block w-full text-right px-4 py-3 rounded-xl text-base font-medium transition duration-200 no-underline ${
-              path === "/project" ? "text-white bg-blue-600/20 border border-blue-500/30" : "text-slate-300 hover:text-white hover:bg-white/[0.05]"
-            }`}
-            type="link"
-            href="/project"
-          >
-            الخدمات والمشاريع
-          </Button>
+        <div className="lg:hidden border-b border-white/[0.08] bg-[#0A0B14]/95 backdrop-blur-2xl px-5 pt-4 pb-6 space-y-2 shadow-2xl">
+          {navItems.map((item) => (
+            <a
+              key={item.targetId}
+              href={item.href}
+              onClick={(e) => handleNavClick(e, item)}
+              className={`block w-full text-right px-4 py-2.5 rounded-xl text-sm font-medium transition no-underline ${
+                item.isHighlight
+                  ? "text-emerald-400 hover:text-emerald-300 hover:bg-emerald-500/10"
+                  : "text-slate-300 hover:text-white hover:bg-white/[0.05]"
+              }`}
+            >
+              {item.label}
+            </a>
+          ))}
 
           <div className="pt-2">
             <Button

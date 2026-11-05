@@ -4,32 +4,83 @@
 /* eslint-disable react/jsx-filename-extension */
 import React, { Component } from "react";
 
-import { Services, Portfolios, Advantages, FeaturedRealProjects } from "json/landingPageData";
+import { Portfolios } from "json/landingPageData";
+
+// Core High-Converting Landing Page Components
 import Hero from "parts/Hero";
-import Service from "parts/Service";
-import FeaturedProjects from "parts/FeaturedProjects";
+import SocialProofBar from "parts/SocialProofBar";
+import SolutionShowcase from "parts/SolutionShowcase";
+import DigitalTransformation from "parts/DigitalTransformation";
+import KeyFeatures from "parts/KeyFeatures";
+import CredibilityStats from "parts/CredibilityStats";
+import BentoBenefits from "parts/BentoBenefits";
 import Portfolio from "parts/Portfolio";
-import Advantage from "parts/Advantage";
-import Tools from "parts/Tools";
+import HowItWorks from "parts/HowItWorks";
+import IntegrationsSection from "parts/IntegrationsSection";
+import FaqAccordion from "parts/FaqAccordion";
 import Discuss from "parts/Discuss";
 import Footer from "parts/Footer";
 
 export default class LandingPage extends Component {
   componentDidMount() {
-    window.scrollTo(0, 0);
+    // If there is an anchor hash in the URL, scroll smoothly to it with offset
+    if (window.location.hash) {
+      const id = window.location.hash.replace("#", "");
+      setTimeout(() => {
+        const element = document.getElementById(id);
+        if (element) {
+          const headerOffset = 80;
+          const elementPosition = element.getBoundingClientRect().top;
+          const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+          window.scrollTo({
+            top: offsetPosition,
+            behavior: "smooth",
+          });
+        }
+      }, 150);
+    } else {
+      window.scrollTo(0, 0);
+    }
   }
 
   render() {
     return (
-      <>
+      <main className="bg-[#0A0B14] min-h-screen text-slate-100 selection:bg-purple-600 selection:text-white" role="main">
+        {/* 1. الرئيسية: Hero Section */}
         <Hero />
-        <Service data={Services} />
-        <FeaturedProjects data={FeaturedRealProjects} />
+
+        {/* شريط الإثبات الاجتماعي */}
+        <SocialProofBar />
+
+        {/* 2. الحلول: Interactive Solution Showcase with Real Sites & Links */}
+        <SolutionShowcase />
+
+        {/* 3. لماذا التحول الرقمي؟: Comparison Matrix, Sector Suggestions & Guarantees */}
+        <DigitalTransformation />
+
+        {/* 4. المميزات: Key Features (3 Core SaaS Pillars) */}
+        <KeyFeatures />
+
+        {/* إحصائيات المصداقية وشبكة الفوائد */}
+        <CredibilityStats />
+        <BentoBenefits />
+
+        {/* 5. المشاريع: Full Interactive Portfolio Carousel */}
         <Portfolio data={Portfolios} />
-        <Advantage data={Advantages} />
+
+        {/* 6. كيف نعمل: 3 Easy Steps to Onboarding */}
+        <HowItWorks />
+
+        {/* تكامل الأنظمة والأدوات */}
+        <IntegrationsSection />
+
+        {/* 7. الأسئلة الشائعة: FAQ Accordion */}
+        <FaqAccordion />
+
+        {/* الدعوة للإجراء والفوتر */}
         <Discuss />
         <Footer />
-      </>
+      </main>
     );
   }
 }
